@@ -1,0 +1,46 @@
+html, body, h1, h2, h3, h4, h5, h6, p {
+  font-family: "Montserrat";
+}
+
+body {
+  background-color: #2b2733;
+  margin: 0;
+}
+
+.main-title {
+  text-align: center;
+  color: #fff;
+  background-color: #46424d;
+  padding-top: 1em;
+  padding-bottom: .75em;
+  margin: 0;
+}
+
+.new-activity-container {
+
+}
+
+.new-activity-title {
+
+}
+
+.activity-box {
+background-color: #46424d;
+}
+
+.button-section {
+
+}
+
+.study-button {
+
+}
+
+.exercise-button {
+
+}
+
+
+
+
+,
