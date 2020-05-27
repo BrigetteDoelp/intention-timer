@@ -30,10 +30,11 @@ header {
 }
 
 .activity-box {
+  position: relative;
   border: 2px solid #46424d;
   background: #46424d;
   border-radius: .35em;
-  width: 75%;
+  width: 70%;
   margin-left: 1.6em;
   margin-top: 4.3em;
 }
@@ -44,7 +45,70 @@ header {
   color: #cbc9cf;
 }
 
+.category-title {
+  position: relative;
+  margin-left: 3.8em;
+  margin-top: 2em;
+}
 
+.button-section {
+  display: flex;
+  position: relative;
+  margin-top: 1em;
+  justify-content: space-around;
+
+}
+
+.study-button {
+  border: 2px solid #fff;
+  padding-left: 3.5em;
+  padding-right: 3.5em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  border-radius: .35em;
+  background: #46424d;
+}
+
+.meditate-button {
+  border: 2px solid #fff;
+  padding-left: 3.5em;
+  padding-right: 3.5em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  border-radius: .35em;
+  background: #46424d;
+}
+
+.exercise-button {
+  border: 2px solid #fff;
+  padding-left: 3.5em;
+  padding-right: 3.5em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  border-radius: .35em;
+  background: #46424d;
+}
+
+.form-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 3em;
+}
+
+.question-text {
+  margin-top: -.2em;
+  margin-right: 15em;
+}
+
+.accomplishment-input {
+  width: 49em;
+  border-top: 2px solid #46424d;
+  border-right: 2px solid #46424d;
+  border-left: 2px solid #46424d;
+  border-bottom: 2px solid #cbc9cf;
+  background: #46424d;
+}
 
 
 
