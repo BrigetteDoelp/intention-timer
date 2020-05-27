@@ -14,10 +14,25 @@
           <h1 class="new-activity-title">New Activity</h1>
           <section class="activity-box">
             <p>Select a category</p>
-            <button class="study-button" 
-            <button class="meditate-button"
-            <button class="exercise-button"
+            <section class="button-section">
+              <button class="study-button" src=./assets/study.svg>Study</button>
+              <button class="meditate-button" src=./assets/meditate.svg>Meditate</button>
+              <button class="exercise-button" src=./assets/exercise.svg>Exercise</button>
+            </section>
+            <section class="form-section">
+              <form>
+                <p>What would you like to accomplish during this time?</p>
+                  <input class="accomplishment-input"/>
+                <p>Minutes</p>
+                  <input class="minutes-input"/>
+                <p>Seconds</p>
+                  <input class="seconds-input"/>
+                <button class="start-activity-button">START ACTIVITY</button>
+              </form>
           </section>
-
+          <section class="past-activity-container"></section>
+            <h1>Past Activities</h1>
+            <p>You haven't logged any activities yet.<p>
+            <p>Complete the form to the left to get started!</p>
     </body>
 </html>
