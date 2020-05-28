@@ -42,27 +42,8 @@ label {
 
 }
 
-.study-button {
-  border: 2px solid #fff;
-  padding-left: 3.5em;
-  padding-right: 3.5em;
-  padding-top: 1em;
-  padding-bottom: 1em;
-  border-radius: .35em;
-  background: #46424d;
-}
-
-.meditate-button {
-  border: 2px solid #fff;
-  padding-left: 3.5em;
-  padding-right: 3.5em;
-  padding-top: 1em;
-  padding-bottom: 1em;
-  border-radius: .35em;
-  background: #46424d;
-}
-
-.exercise-button {
+.button {
+  color: white;
   border: 2px solid #fff;
   padding-left: 3.5em;
   padding-right: 3.5em;
