@@ -66,11 +66,15 @@ label {
   border-left: 2px solid #cbc9cf;
 }
 
-.form-section {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  margin-top: 3em;
+form {
+  background: #46424d;
+  border: 2px solid #46424d;
+   border-radius: .35em;
+   padding: 2em 4em;
+}
+
+form > section {
+  margin: 2em 0em;
 }
 
 .question-text {
