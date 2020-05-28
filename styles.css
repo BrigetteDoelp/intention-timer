@@ -31,16 +31,14 @@ label {
 }
 
 .category-title {
-  position: relative;
-  margin-left: 3.8em;
-  margin-top: 2em;
+  width: 100%;
 }
 
 .button-section {
   display: flex;
   position: relative;
   margin-top: 1em;
-  justify-content: space-around;
+  justify-content: space-between;
 
 }
 
