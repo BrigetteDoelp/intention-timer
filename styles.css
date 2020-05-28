@@ -3,10 +3,6 @@ body {
   margin: 0;
 }
 
-main {
-  display: flex;
-}
-
 header {
   text-align: center;
   background-color: #46424d;
@@ -14,10 +10,14 @@ header {
   padding-bottom: .5em;
 }
 
-.main-title, p {
+.main-title, p, label {
   font-family: Montserrat;
   font-weight: 400;
   color: #fff;
+}
+
+label {
+  display: block;
 }
 
 .new-activity-title {
