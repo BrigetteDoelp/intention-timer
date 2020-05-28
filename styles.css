@@ -53,6 +53,21 @@ label {
   background: #46424d;
 }
 
+.study-img {
+  height: 25px;
+  width: 25px;
+}
+
+.meditate-img {
+  height: 25px;
+  width: 25px;
+}
+
+.exercise-img {
+  height: 25px;
+  width: 25px;
+}
+
 .new-activity-container {
   display: flex;
   height: 100vh;
