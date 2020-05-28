@@ -25,27 +25,7 @@ label {
   justify-content: space-between;
 }
 
-.new-activity-title {
-  font-family: Montserrat;
-  position: absolute;
-  font-weight: 300;
-  color: #cbc9cf;
-  margin-left: 1.01em;
-  margin-top: 1.3em;
-}
-
-.activity-box {
-  position: relative;
-  border: 2px solid #46424d;
-  background: #46424d;
-  border-radius: .35em;
-  width: 70%;
-  margin-left: 1.6em;
-  margin-top: 4.3em;
-}
-
-.past-activities-title {
-  font-family: Montserrat;
+.new-activity-title, .past-activities-title {
   font-weight: 300;
   color: #cbc9cf;
 }
