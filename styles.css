@@ -53,6 +53,15 @@ label {
   background: #46424d;
 }
 
+.new-activity-container {
+  display: flex;
+  height: 100vh;
+}
+
+.new-activity-container > * {
+  padding: 0 2em;
+}
+
 .form-section {
   display: flex;
   flex-wrap: wrap;
