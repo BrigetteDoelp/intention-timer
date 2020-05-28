@@ -20,6 +20,11 @@ label {
   display: block;
 }
 
+.time-inputs-container {
+  display: flex;
+  justify-content: space-between;
+}
+
 .new-activity-title {
   font-family: Montserrat;
   position: absolute;
