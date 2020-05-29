@@ -28,9 +28,11 @@ label {
 .time-inputs-container {
   display: flex;
   justify-content: space-between;
+  margin-top: -.7em;
 }
 
 .new-activity-title, .past-activities-title {
+  font-family: Montserrat;
   font-weight: 300;
   color: #cbc9cf;
   padding-top: 5%;
@@ -47,11 +49,22 @@ label {
   justify-content: space-between;
 }
 
-.button {
+.meditate-button, .exercise-button {
   color: white;
   border: 2px solid #fff;
   padding-left: 3.5em;
   padding-right: 3.5em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  border-radius: .35em;
+  background: #46424d;
+}
+
+.study-button {
+  color: white;
+  border: 2px solid #fff;
+  padding-left: 4.2em;
+  padding-right: 4.2em;
   padding-top: 1em;
   padding-bottom: 1em;
   border-radius: .35em;
@@ -82,9 +95,14 @@ label {
 }
 
 .past-activity-container {
-  border-left: 2px solid #cbc9cf;
+  border-left: 2px solid #46424d;
   width: 30%;
   padding-left: 5%;
+}
+
+ .past-text {
+  text-align: center;
+  font-size: 15px;
 }
 
 form {
@@ -107,9 +125,31 @@ form > section {
   border: none;
   border-bottom: 2px solid #cbc9cf;
   background: #46424d;
+  margin-top: 1.5em;
+}
+
+.minutes-input {
+  width: 110%;
+  margin-right: 1.4em;
+  border: none;
+  border-bottom: 2px solid #cbc9cf;
+  background: #46424d;
+  margin-top: 1.2em;
+}
+
+.seconds-input {
+  width: 100%;
+  margin-right: 3em;
+  border: none;
+  border-bottom: 2px solid #cbc9cf;
+  background: #46424d;
+  margin-top: 1.2em;
 }
 
 .start-activity-button {
   display: block;
   margin-left: auto;
+  color: #46424d;
+  padding: .5em 1.5em;
+
 }
