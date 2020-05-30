@@ -5,17 +5,54 @@ var startActivityButton = document.querySelector('.start-activity-button');
 var studyImg = document.querySelector('.study-img');
 var studyActiveImg = document.querySelector('.study-active-img');
 var studyButtonActive = document.querySelector('.study-button-active');
+var meditateImg = document.querySelector('.meditate-img');
+var meditateActiveImg = document.querySelector('.meditate-active-img');
+var meditateButtonActive = document.querySelector('.meditate-button-active');
+var exerciseImg = document.querySelector('.exercise-img');
+var exerciseActiveImg = document.querySelector('.exercise-active-img');
+var exerciseButtonActive = document.querySelector('.exercise-button-active');
 
 studyButton.addEventListener('click', selectStudy);
-
-
+meditateButton.addEventListener('click', selectMeditate);
+exerciseButton.addEventListener('click', selectExercise);
 
 function selectStudy(event) {
   event.preventDefault();
   studyImg.src = "./assets/study-active.svg";
+  meditateImg.src = "./assets/meditate.svg";
+  exerciseImg.src = "./assets/exercise.svg";
 }
 
+function selectMeditate(event) {
+  event.preventDefault();
+  meditateImg.src = "./assets/meditate-active.svg";
+  studyImg.src = "./assets/study.svg";
+  exerciseImg.src = "./assets/exercise.svg";
+}
 
+function selectExercise(event) {
+  event.preventDefault();
+  exerciseImg.src = "./assets/exercise-active.svg";
+  meditateImg.src = "./assets/meditate.svg";
+  studyImg.src = "./assets/study.svg";
+}
+
+// var currentActivity;
+// var activitiesArr = [];
+// function makeActivity(event) {
+//  event.preventDefault();
+//  var activityInput = document.querySelector(“form”);
+//  var userCategory = document.querySelector(“.button”).value;
+//  var minutesInput = document.querySelector(“.minutes-input”).value;
+//  var secondsInput = document.querySelector(“.seconds-input”).value;
+//  currentActivity = new Activity(category, minutes, seconds);
+//  activitiesArr.push(currentActivity);
+//  form.reset();
+//  showTimer();
+// };
+
+// function showTimer() {
+// }
 
 
 // Form Functionality
