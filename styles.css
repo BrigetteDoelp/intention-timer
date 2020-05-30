@@ -60,6 +60,40 @@ label {
   background: #46424d;
 }
 
+.active-meditate-button {
+  color: #C278FD;
+  border: 2px solid #C278FD;
+  padding-left: 3.5em;
+  padding-right: 3.5em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  border-radius: .35em;
+  background: #46424d;
+}
+
+.meditate-active-img {
+  color: #C278FD;
+  height: 25px;
+  width: 25px;
+}
+
+.active-exercise-button {
+  color: #FD8078;
+  border: 2px solid #FD8078;
+  padding-left: 3.5em;
+  padding-right: 3.5em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  border-radius: .35em;
+  background: #46424d;
+}
+
+.exercise-active-img {
+  color: #FD8078;
+  height: 25px;
+  width: 25px;
+}
+
 .study-button {
   color: white;
   border: 2px solid #fff;
@@ -88,6 +122,10 @@ label {
   height: 25px;
   width: 25px;
 }
+
+/* Meditate: #C278FD
+Exercise: #FD8078 */
+
 
 .study-img {
   height: 25px;
