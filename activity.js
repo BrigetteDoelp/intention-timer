@@ -1,6 +1,6 @@
 
 class Activity {
-  constructor() {
+  constructor(category, ) {
     this.id = Date.now();
     this.category = category;
     this.description = description;
