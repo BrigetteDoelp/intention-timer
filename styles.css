@@ -71,6 +71,24 @@ label {
   background: #46424d;
 }
 
+.active-study-button {
+  color: #B3FD78;
+  border: 2px solid #B3FD78;
+  padding-left: 4.2em;
+  padding-right: 4.2em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  border-radius: .35em;
+  background: #46424d;
+}
+
+.study-active-img {
+  /* border: 2px solid #B3FD78; */
+  color: #B3FD78;
+  height: 25px;
+  width: 25px;
+}
+
 .study-img {
   height: 25px;
   width: 25px;
