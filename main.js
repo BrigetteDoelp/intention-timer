@@ -11,16 +11,27 @@ var meditateButtonActive = document.querySelector('.meditate-button-active');
 var exerciseImg = document.querySelector('.exercise-img');
 var exerciseActiveImg = document.querySelector('.exercise-active-img');
 var exerciseButtonActive = document.querySelector('.exercise-button-active');
-var accomplishmentInput = document.querySelector('.accomplishment-input');
-var secondsInput = document.querySelector('.seconds-input');
+var activeButton = document.querySelector(".button.active");
+var descriptionInput = document.querySelector('.description-input');
 var minutesInput = document.querySelector('.minutes-input');
+var secondsInput = document.querySelector('.seconds-input');
+var warningMessage = document.querySelector('.warning-message-number');
+var activeButton = document.querySelector(".button.active");
+var descriptionInput = document.querySelector('.description-input');
+var minutesInput = document.querySelector('.minutes-input');
+var secondsInput = document.querySelector('.seconds-input');
+
+var isValid;
 var currentActivity;
 var savedActivity = [];
+
 
 studyButton.addEventListener('click', selectActivity);
 meditateButton.addEventListener('click', selectActivity);
 exerciseButton.addEventListener('click', selectActivity);
-startActivityButton.addEventListener('click', makeActivity);
+// startActivityButton.addEventListener('click', makeActivity);
+startActivityButton.addEventListener('click', validateNum);
+
 
 
 function selectActivity(event) {
@@ -32,21 +43,38 @@ function selectActivity(event) {
   event.target.classList.add("active")
 }
 
+// var userCategory = document.querySelector('.button')
+
 
 function makeActivity(event) {
 event.preventDefault();
- // var activityInput = document.querySelector(“form”);
- var userCategory = document.querySelector('.button').value;
- var minutesInput = document.querySelector('.minutes-input').value;
- var secondsInput = document.querySelector('.seconds-input').value;
- currentActivity = new Activity(userCategory, minutesInput, secondsInput);
- console.log(currentActivity)
- savedActivity.push(currentActivity);
+
+var userCategory = document.querySelector(".button.active").innerText;
+var descriptionInput = document.querySelector('.description-input').value;
+var minutesInput = document.querySelector('.minutes-input').value;
+var secondsInput = document.querySelector('.seconds-input').value;
+// userCategory = activeButton.innerText;
+// descriptionInput = descriptionInput.value;
+// minutesInput = minutesInput.value;
+// secondsInput = secondsInput.value;
+currentActivity = new Activity(userCategory, descriptionInput, minutesInput, secondsInput);
+
  //reset form();
- //?showTimer();
+ //showTimer();
 };
 
-//accomplishmentInput.innerText = currentActivity.description;
+function validateNum(event) {
+  if (minutesInput.value.includes('e') || minutesInput.value === '' || parseInt(minutesInput.value) <= 0) {
+    hasError = true;
+    warningMessage.innerHTML = `<p><img class="warning-img hidden" src="assets/warning.svg" alt="warning img"/>Jail for a thousand years!</p>`
+  } else {
+    makeActivity(event);
+  }
+}
+
+// validateNum();
+
+//descriptionInput.innerText = currentActivity.description;
 //   minutesInput.innerText = currentActivity.minutes;
 //   secondsInput.innerText = currentCover.seconds;
 
