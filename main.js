@@ -18,6 +18,8 @@ var minutesInput = document.querySelector('.minutes-input');
 studyButton.addEventListener('click', selectActivity);
 meditateButton.addEventListener('click', selectActivity);
 exerciseButton.addEventListener('click', selectActivity);
+startActivityButton.addEventListener('click', makeActivity)
+
 
 // function selectStudy(event) {
 //   event.preventDefault();
