@@ -52,6 +52,14 @@ currentActivity = new Activity(undefined, descriptionInput, minutesInput, second
  //showTimer();
 };
 
+function validateNum(event) {
+  if (minutesInput.value.includes('e') || minutesInput.value === '' || parseInt(minutesInput.value) <= 0) {
+    hasError = true;
+    warningMessage.innerHTML = `<p><img class="warning-img hidden" src="assets/warning.svg" alt="warning img"/>Jail for a thousand years!</p>`
+  } else {
+    makeActivity(event);
+  }
+}
 
 
 // validateNum();
