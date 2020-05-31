@@ -74,7 +74,15 @@ function validateNum(event) {
   }
 }
 
-
+function validateNumSec(event) {
+  event.preventDefault();
+  if (secondsInput.value.includes('e') || secondsInput.value === '' || parseInt(secondsInput.value) <= 0) {
+    hasError = true;
+    warningMessage.innerHTML = `<p><img class="warning-img hidden" src="assets/warning.svg" alt="warning img"/>FreeBird!</p>`
+  } else {
+    validateNumSec(event);
+  }
+}
 
 
 
