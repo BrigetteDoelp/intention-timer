@@ -11,6 +11,9 @@ var meditateButtonActive = document.querySelector('.meditate-button-active');
 var exerciseImg = document.querySelector('.exercise-img');
 var exerciseActiveImg = document.querySelector('.exercise-active-img');
 var exerciseButtonActive = document.querySelector('.exercise-button-active');
+var accomplishmentInput = document.querySelector('.accomplishment-input');
+var secondsInput = document.querySelector('.seconds-input');
+var minutesInput = document.querySelector('.minutes-input');
 
 studyButton.addEventListener('click', selectActivity);
 meditateButton.addEventListener('click', selectActivity);
