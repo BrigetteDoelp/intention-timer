@@ -44,6 +44,7 @@ label {
 
 .button-section {
   display: flex;
+  flex-wrap: wrap;
   position: relative;
   margin-top: 1em;
   justify-content: space-between;
@@ -204,4 +205,24 @@ form > section {
   color: #46424d;
   padding: .5em 1.5em;
 
+}
+
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.warning-message {
+  /* display: none; */
+  font-size: 10px;
+}
+
+.warning-img {
+  /* display: none; */
+  height: 10px;
+  width: 10px;
 }
