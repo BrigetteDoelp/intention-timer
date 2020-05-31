@@ -49,6 +49,15 @@ label {
   justify-content: space-between;
 }
 
+.button::before {
+  content: " ";
+  background-size: 25px;
+  margin: auto;
+  display: block;
+  height: 25px;
+  width: 25px;
+}
+
 .meditate-button, .exercise-button {
   color: white;
   border: 2px solid #fff;
@@ -71,22 +80,47 @@ label {
   background: #46424d;
 }
 
-.active-study-button {
+.study-button.active {
   color: #B3FD78;
-  border: 2px solid #B3FD78;
-  padding-left: 4.2em;
-  padding-right: 4.2em;
-  padding-top: 1em;
-  padding-bottom: 1em;
-  border-radius: .35em;
-  background: #46424d;
+  border-color: #B3FD78;
 }
 
-.study-active-img {
-  /* border: 2px solid #B3FD78; */
-  color: #B3FD78;
-  height: 25px;
-  width: 25px;
+.meditate-button.active {
+  color: #C278FD;
+  border-color: #C278FD;
+}
+
+.exercise-button.active {
+  color: #FD8078;
+  border-color: #FD8078;
+}
+
+.button:active, .button:focus {
+  outline: none;
+}
+
+.meditate-button::before {
+  background-image: url("./assets/meditate.svg");
+}
+
+.meditate-button.active::before {
+  background-image: url("./assets/meditate-active.svg");
+}
+
+.exercise-button::before {
+  background-image: url("./assets/exercise.svg");
+}
+
+.exercise-button.active::before {
+  background-image: url("./assets/exercise-active.svg");
+}
+
+.study-button::before {
+  background-image: url("./assets/study.svg");
+}
+
+.study-button.active::before {
+  background-image: url("./assets/study-active.svg");
 }
 
 .study-img {
