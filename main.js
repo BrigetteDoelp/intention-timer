@@ -11,16 +11,20 @@ var meditateButtonActive = document.querySelector('.meditate-button-active');
 var exerciseImg = document.querySelector('.exercise-img');
 var exerciseActiveImg = document.querySelector('.exercise-active-img');
 var exerciseButtonActive = document.querySelector('.exercise-button-active');
-var accomplishmentInput = document.querySelector('.accomplishment-input');
+var descriptionInput = document.querySelector('.description-input');
 var secondsInput = document.querySelector('.seconds-input');
 var minutesInput = document.querySelector('.minutes-input');
+var secondsInput = document.querySelector('.seconds-input')
 var currentActivity;
 var savedActivity = [];
+
 
 studyButton.addEventListener('click', selectActivity);
 meditateButton.addEventListener('click', selectActivity);
 exerciseButton.addEventListener('click', selectActivity);
-startActivityButton.addEventListener('click', makeActivity);
+// startActivityButton.addEventListener('click', makeActivity);
+
+
 
 
 function selectActivity(event) {
@@ -32,21 +36,24 @@ function selectActivity(event) {
   event.target.classList.add("active")
 }
 
+// var userCategory = document.querySelector('.button')
+
 
 function makeActivity(event) {
 event.preventDefault();
- // var activityInput = document.querySelector(“form”);
- var userCategory = document.querySelector('.button').value;
- var minutesInput = document.querySelector('.minutes-input').value;
- var secondsInput = document.querySelector('.seconds-input').value;
- currentActivity = new Activity(userCategory, minutesInput, secondsInput);
- console.log(currentActivity)
- savedActivity.push(currentActivity);
+descriptionInput = descriptionInput.value;
+minutesInput = minutesInput.value;
+secondsInput = secondsInput.value;
+currentActivity = new Activity(undefined, descriptionInput, minutesInput, secondsInput);
  //reset form();
- //?showTimer();
+ //showTimer();
 };
 
-//accomplishmentInput.innerText = currentActivity.description;
+
+
+// validateNum();
+
+//descriptionInput.innerText = currentActivity.description;
 //   minutesInput.innerText = currentActivity.minutes;
 //   secondsInput.innerText = currentCover.seconds;
 
