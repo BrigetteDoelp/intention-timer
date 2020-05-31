@@ -30,6 +30,7 @@ studyButton.addEventListener('click', selectActivity);
 meditateButton.addEventListener('click', selectActivity);
 exerciseButton.addEventListener('click', selectActivity);
 // startActivityButton.addEventListener('click', makeActivity);
+// startActivityButton.addEventListener('click', validateNum);
 startActivityButton.addEventListener('click', validateNum);
 
 
@@ -58,19 +59,24 @@ var secondsInput = document.querySelector('.seconds-input').value;
 // minutesInput = minutesInput.value;
 // secondsInput = secondsInput.value;
 currentActivity = new Activity(userCategory, descriptionInput, minutesInput, secondsInput);
-
  //reset form();
  //showTimer();
 };
 
 function validateNum(event) {
+  event.preventDefault();
   if (minutesInput.value.includes('e') || minutesInput.value === '' || parseInt(minutesInput.value) <= 0) {
     hasError = true;
     warningMessage.innerHTML = `<p><img class="warning-img hidden" src="assets/warning.svg" alt="warning img"/>Jail for a thousand years!</p>`
+
   } else {
-    makeActivity(event);
+    validateNumSec(event);
   }
 }
+
+
+
+
 
 // validateNum();
 
