@@ -14,7 +14,9 @@ var exerciseButtonActive = document.querySelector('.exercise-button-active');
 var descriptionInput = document.querySelector('.description-input');
 var secondsInput = document.querySelector('.seconds-input');
 var minutesInput = document.querySelector('.minutes-input');
-var secondsInput = document.querySelector('.seconds-input')
+var secondsInput = document.querySelector('.seconds-input');
+var warningMessage = document.querySelector('.warning-message-number');
+var isValid;
 var currentActivity;
 var savedActivity = [];
 
@@ -22,6 +24,7 @@ var savedActivity = [];
 studyButton.addEventListener('click', selectActivity);
 meditateButton.addEventListener('click', selectActivity);
 exerciseButton.addEventListener('click', selectActivity);
+startActivityButton.addEventListener('click', validateNum);
 // startActivityButton.addEventListener('click', makeActivity);
 
 
