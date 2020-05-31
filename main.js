@@ -14,33 +14,14 @@ var exerciseButtonActive = document.querySelector('.exercise-button-active');
 var accomplishmentInput = document.querySelector('.accomplishment-input');
 var secondsInput = document.querySelector('.seconds-input');
 var minutesInput = document.querySelector('.minutes-input');
+var currentActivity;
+var savedActivity = [];
 
 studyButton.addEventListener('click', selectActivity);
 meditateButton.addEventListener('click', selectActivity);
 exerciseButton.addEventListener('click', selectActivity);
-startActivityButton.addEventListener('click', makeActivity)
+startActivityButton.addEventListener('click', makeActivity);
 
-
-// function selectStudy(event) {
-//   event.preventDefault();
-//   studyImg.src = "./assets/study-active.svg";
-//   meditateImg.src = "./assets/meditate.svg";
-//   exerciseImg.src = "./assets/exercise.svg";
-// }
-//
-// function selectMeditate(event) {
-//   event.preventDefault();
-//   meditateImg.src = "./assets/meditate-active.svg";
-//   studyImg.src = "./assets/study.svg";
-//   exerciseImg.src = "./assets/exercise.svg";
-// }
-//
-// function selectExercise(event) {
-//   event.preventDefault();
-//   exerciseImg.src = "./assets/exercise-active.svg";
-//   meditateImg.src = "./assets/meditate.svg";
-//   studyImg.src = "./assets/study.svg";
-// }
 
 function selectActivity(event) {
   event.preventDefault();
@@ -51,22 +32,21 @@ function selectActivity(event) {
   event.target.classList.add("active")
 }
 
-// var currentActivity;
-// var activitiesArr = [];
-// function makeActivity(event) {
-//  event.preventDefault();
-//  var activityInput = document.querySelector(“form”);
-//  var userCategory = document.querySelector(“.button”).value;
-//  var minutesInput = document.querySelector(“.minutes-input”).value;
-//  var secondsInput = document.querySelector(“.seconds-input”).value;
-//  currentActivity = new Activity(category, minutes, seconds);
-//  activitiesArr.push(currentActivity);
-//  form.reset();
-//  showTimer();
-// };
 
-// function showTimer() {
-// }
+function makeActivity(event) {
+event.preventDefault();
+ // var activityInput = document.querySelector(“form”);
+ var userCategory = document.querySelector('.button').value;
+ var minutesInput = document.querySelector('.minutes-input').value;
+ var secondsInput = document.querySelector('.seconds-input').value;
+ currentActivity = new Activity(userCategory, minutesInput, secondsInput);
+ console.log(currentActivity)
+ savedActivity.push(currentActivity);
+ //reset form();
+ //?showTimer();
+};
+
+
 
 
 // Form Functionality
