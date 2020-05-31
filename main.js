@@ -12,29 +12,38 @@ var exerciseImg = document.querySelector('.exercise-img');
 var exerciseActiveImg = document.querySelector('.exercise-active-img');
 var exerciseButtonActive = document.querySelector('.exercise-button-active');
 
-studyButton.addEventListener('click', selectStudy);
-meditateButton.addEventListener('click', selectMeditate);
-exerciseButton.addEventListener('click', selectExercise);
+studyButton.addEventListener('click', selectActivity);
+meditateButton.addEventListener('click', selectActivity);
+exerciseButton.addEventListener('click', selectActivity);
 
-function selectStudy(event) {
-  event.preventDefault();
-  studyImg.src = "./assets/study-active.svg";
-  meditateImg.src = "./assets/meditate.svg";
-  exerciseImg.src = "./assets/exercise.svg";
-}
+// function selectStudy(event) {
+//   event.preventDefault();
+//   studyImg.src = "./assets/study-active.svg";
+//   meditateImg.src = "./assets/meditate.svg";
+//   exerciseImg.src = "./assets/exercise.svg";
+// }
+//
+// function selectMeditate(event) {
+//   event.preventDefault();
+//   meditateImg.src = "./assets/meditate-active.svg";
+//   studyImg.src = "./assets/study.svg";
+//   exerciseImg.src = "./assets/exercise.svg";
+// }
+//
+// function selectExercise(event) {
+//   event.preventDefault();
+//   exerciseImg.src = "./assets/exercise-active.svg";
+//   meditateImg.src = "./assets/meditate.svg";
+//   studyImg.src = "./assets/study.svg";
+// }
 
-function selectMeditate(event) {
+function selectActivity(event) {
   event.preventDefault();
-  meditateImg.src = "./assets/meditate-active.svg";
-  studyImg.src = "./assets/study.svg";
-  exerciseImg.src = "./assets/exercise.svg";
-}
-
-function selectExercise(event) {
-  event.preventDefault();
-  exerciseImg.src = "./assets/exercise-active.svg";
-  meditateImg.src = "./assets/meditate.svg";
-  studyImg.src = "./assets/study.svg";
+  var activeButton = document.querySelector(".button.active");
+  if (activeButton) {
+    activeButton.classList.remove("active")
+  }
+  event.target.classList.add("active")
 }
 
 // var currentActivity;
