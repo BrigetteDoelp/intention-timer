@@ -46,7 +46,9 @@ event.preventDefault();
  //?showTimer();
 };
 
-
+//accomplishmentInput.innerText = currentActivity.description;
+//   minutesInput.innerText = currentActivity.minutes;
+//   secondsInput.innerText = currentCover.seconds;
 
 
 // Form Functionality
