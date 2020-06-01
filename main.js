@@ -125,6 +125,7 @@ function validateDescription(event) {
     descriptionWarning.innerHTML = `<p class="warning-message"><img class="warning-img hidden" src="assets/warning.svg" alt="warning img">jail for mother!</p>`
     return false;
   } else {
+    descriptionWarning.innerHTML = '';
     return true;
       // makeActivity(event);
   }
@@ -137,6 +138,7 @@ function validateNum(event) {
       return false;
   //
   } else {
+    warningMessage.innerHTML = '';
     return true;
     // validateNumSec(event);
   }
