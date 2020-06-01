@@ -31,7 +31,8 @@ meditateButton.addEventListener('click', selectActivity);
 exerciseButton.addEventListener('click', selectActivity);
 // startActivityButton.addEventListener('click', makeActivity);
 // startActivityButton.addEventListener('click', validateNum);
-startActivityButton.addEventListener('click', validateNum);
+
+// startActivityButton.addEventListener('click', validateNum);
 
 
 
@@ -54,35 +55,53 @@ var userCategory = document.querySelector(".button.active").innerText;
 var descriptionInput = document.querySelector('.description-input').value;
 var minutesInput = document.querySelector('.minutes-input').value;
 var secondsInput = document.querySelector('.seconds-input').value;
+currentActivity = new Activity(userCategory, descriptionInput, minutesInput, secondsInput);
 // userCategory = activeButton.innerText;
 // descriptionInput = descriptionInput.value;
 // minutesInput = minutesInput.value;
 // secondsInput = secondsInput.value;
-currentActivity = new Activity(userCategory, descriptionInput, minutesInput, secondsInput);
  //reset form();
  //showTimer();
 };
+startActivityButton.addEventListener('click', validateDescription);
 
-function validateNum(event) {
+// descriptionValue.addEventListener('keydown', validateDescription);
+var descriptionWarning = document.querySelector('.description-warning');
+
+function validateDescription(event) {
   event.preventDefault();
-  if (minutesInput.value.includes('e') || minutesInput.value === '' || parseInt(minutesInput.value) <= 0) {
+  if (descriptionInput.value === '' || descriptionInput === undefined) {
     hasError = true;
-    warningMessage.innerHTML = `<p><img class="warning-img hidden" src="assets/warning.svg" alt="warning img"/>Jail for a thousand years!</p>`
-
+    descriptionWarning.innerHTML = `<p class="warning-message"><img class="warning-img hidden" src="assets/warning.svg" alt="warning img">jail for mother!</p>`
   } else {
-    validateNumSec(event);
+      makeActivity(event);
   }
 }
 
-function validateNumSec(event) {
-  event.preventDefault();
-  if (secondsInput.value.includes('e') || secondsInput.value === '' || parseInt(secondsInput.value) <= 0) {
-    hasError = true;
-    warningMessage.innerHTML = `<p><img class="warning-img hidden" src="assets/warning.svg" alt="warning img"/>FreeBird!</p>`
-  } else {
-    validateNumSec(event);
-  }
-}
+// function validateNum(event) {
+//   event.preventDefault();
+//   if (minutesInput.value.includes('e') || minutesInput.value === '' || parseInt(minutesInput.value) <= 0) {
+//     hasError = true;
+//     warningMessage.innerHTML = `<p><img class="warning-img hidden" src="assets/warning.svg" alt="warning img"/>Jail for a thousand years!</p>`
+//   //
+//   } else {
+//     validateNumSec(event);
+//   }
+// }
+//
+// function validateNumSec(event) {
+//   event.preventDefault();
+//   if (secondsInput.value.includes('e') || secondsInput.value === '' || parseInt(secondsInput.value) <= 0) {
+//     hasError = true;
+//     warningMessage.innerHTML = `<p><img class="warning-img hidden" src="assets/warning.svg" alt="warning img"/>FreeBird!</p>`
+//   } else {
+//     makeActivity(event);
+//   }
+// }
+
+// function resetForm() {
+//
+// }
 
 
 
