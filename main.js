@@ -77,14 +77,15 @@ function mamaFunction(event) {
 
 function selectActivity(event) {
   event.preventDefault();
+  var activeButton = document.querySelector(".button.active");
   if (activeButton) {
     activeButton.classList.remove("active")
     selectedActivity = '';
-
     // validateCategory(event)
   }
-  selectedActivity = event.target.innerText;
   event.target.classList.add("active")
+  selectedActivity = event.target.innerText;
+
   // validateCategory(event);
 }
 
