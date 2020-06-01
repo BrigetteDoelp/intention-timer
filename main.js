@@ -21,26 +21,17 @@ var descriptionInput = document.querySelector('.description-input');
 var minutesInput = document.querySelector('.minutes-input');
 var secondsInput = document.querySelector('.seconds-input');
 var descriptionWarning = document.querySelector('.description-warning');
-
+var activeButton = document.querySelector(".button.active");
 
 var hasError = true;
 var currentActivity;
 var savedActivity = [];
-
+var selectedActivity = '';
 
 studyButton.addEventListener('click', selectActivity);
 meditateButton.addEventListener('click', selectActivity);
 exerciseButton.addEventListener('click', selectActivity);
-// startActivityButton.addEventListener('click', makeActivity);
-// startActivityButton.addEventListener('click', validateNum);
-
-// startActivityButton.addEventListener('click', validateNum);
-var activeButton = document.querySelector(".button.active");
-
-// startActivityButton.addEventListener('click', validateCategory);
 startActivityButton.addEventListener('click', mamaFunction);
-
-var selectedActivity = '';
 
 function validateCategory(event) {
   event.preventDefault();
@@ -50,30 +41,14 @@ function validateCategory(event) {
     return true;
   }
 }
-//   hasError = true;
-// } else {
-//   hasError = false;
-// }
-  // if (selectActivity.classList.contains("active")) {
-  //   hasError = false;
-  //   console.log("YOYO");
-  // }
-  // event.preventDefault();
-  // if (activeButton) {
-  //   hasError = false;
-  //   return 'no error';
-  // }
 
 function mamaFunction(event) {
-  // event.preventDefault();
   if (validateCategory(event) && validateDescription(event) && validateNum(event) && validateNumSec(event)) {
     true;
     hasError = false;
     makeActivity(event);
   }
-  // if category && minutes %% desctiption && seconds all return true,
-  //then, hasError = false;
-}
+}  
 
 function selectActivity(event) {
   event.preventDefault();
@@ -98,26 +73,7 @@ var descriptionInput = document.querySelector('.description-input').value;
 var minutesInput = document.querySelector('.minutes-input').value;
 var secondsInput = document.querySelector('.seconds-input').value;
 currentActivity = new Activity(userCategory, descriptionInput, minutesInput, secondsInput);
-// userCategory = activeButton.innerText;
-// descriptionInput = descriptionInput.value;
-// minutesInput = minutesInput.value;
-// secondsInput = secondsInput.value;
- //reset form();
- //showTimer();
 };
-
-
-// function validateCategory(event) {
-//   event.preventDefault();
-//   if (currentActivity.category.innerText !== '' || currentActivity.category.innerText !== undefined) {
-//     return false;
-//   } else {
-//     return true;
-//   }
-//   // makeActivity(event);
-// }
-
-// descriptionValue.addEventListener('keydown', validateDescription);
 
 function validateDescription(event) {
   event.preventDefault();
@@ -133,10 +89,9 @@ function validateDescription(event) {
 
 function validateNum(event) {
   event.preventDefault();
-  if (minutesInput.value.includes('e') || minutesInput.value === '' || parseInt(minutesInput.value) <= 0) {
+  if (minutesInput.value.includes('e') || minutesInput.value === '' ||      parseInt(minutesInput.value) <= 0) {
     warningMessage.innerHTML = `<p><img class="warning-img hidden" src="assets/warning.svg" alt="warning img"/>Jail for a thousand years!</p>`
-      return false;
-  //
+  return false;
   } else {
     warningMessage.innerHTML = '';
     return true;
@@ -155,13 +110,44 @@ function validateNumSec(event) {
   }
 }
 
-// function resetForm() {
-//
+
+
+// function validateCategory(event) {
+//   event.preventDefault();
+//   if (currentActivity.category.innerText !== '' || currentActivity.category.innerText !== undefined) {
+//     return false;
+//   } else {
+//     return true;
+//   }
+//   // makeActivity(event);
 // }
 
+// descriptionValue.addEventListener('keydown', validateDescription);
 
 
-// validateNum();
+// userCategory = activeButton.innerText;
+// descriptionInput = descriptionInput.value;
+// minutesInput = minutesInput.value;
+// secondsInput = secondsInput.value;
+ //reset form();
+ //showTimer();
+
+// function resetForm() {
+// }
+//   hasError = true;
+// } else {
+//   hasError = false;
+// }
+  // if (selectActivity.classList.contains("active")) {
+  //   hasError = false;
+  //   console.log("YOYO");
+  // }
+  // event.preventDefault();
+  // if (activeButton) {
+  //   hasError = false;
+  //   return 'no error';
+  // }
+
 
 //descriptionInput.innerText = currentActivity.description;
 //   minutesInput.innerText = currentActivity.minutes;
