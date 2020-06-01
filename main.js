@@ -20,8 +20,10 @@ var activeButton = document.querySelector(".button.active");
 var descriptionInput = document.querySelector('.description-input');
 var minutesInput = document.querySelector('.minutes-input');
 var secondsInput = document.querySelector('.seconds-input');
+var descriptionWarning = document.querySelector('.description-warning');
 
-var isValid;
+
+var hasError;
 var currentActivity;
 var savedActivity = [];
 
@@ -33,21 +35,34 @@ exerciseButton.addEventListener('click', selectActivity);
 // startActivityButton.addEventListener('click', validateNum);
 
 // startActivityButton.addEventListener('click', validateNum);
+var activeButton = document.querySelector(".button.active");
 
+startActivityButton.addEventListener('click', validateCategory);
 
+function validateCategory(event) {
+  event.preventDefault();
+  if (studyButton.classList.contains("active")) {
+    hasError = false;
+    return "YOYO"
+  }
+  // event.preventDefault();
+  // if (activeButton) {
+  //   hasError = false;
+  //   return 'no error';
+  // }
+}
 
 function selectActivity(event) {
   event.preventDefault();
-  var activeButton = document.querySelector(".button.active");
   if (activeButton) {
     activeButton.classList.remove("active")
+    // validateCategory(event)
   }
   event.target.classList.add("active")
+  // validateCategory(event);
 }
 
 // var userCategory = document.querySelector('.button')
-
-
 function makeActivity(event) {
 event.preventDefault();
 
@@ -63,14 +78,22 @@ currentActivity = new Activity(userCategory, descriptionInput, minutesInput, sec
  //reset form();
  //showTimer();
 };
-startActivityButton.addEventListener('click', validateDescription);
+
+
+// function validateCategory(event) {
+//   event.preventDefault();
+//   if (currentActivity.category.innerText !== '' || currentActivity.category.innerText !== undefined) {
+//     hasError = false;
+//   }
+//   makeActivity(event);
+//
+// }
 
 // descriptionValue.addEventListener('keydown', validateDescription);
-var descriptionWarning = document.querySelector('.description-warning');
 
 function validateDescription(event) {
   event.preventDefault();
-  if (descriptionInput.value === '' || descriptionInput === undefined) {
+  if (descriptionInput.value === '' || descriptionInput.value === undefined) {
     hasError = true;
     descriptionWarning.innerHTML = `<p class="warning-message"><img class="warning-img hidden" src="assets/warning.svg" alt="warning img">jail for mother!</p>`
   } else {
