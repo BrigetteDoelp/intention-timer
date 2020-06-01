@@ -37,8 +37,8 @@ exerciseButton.addEventListener('click', selectActivity);
 // startActivityButton.addEventListener('click', validateNum);
 var activeButton = document.querySelector(".button.active");
 
-startActivityButton.addEventListener('click', validateCategory);
-// startActivityButton.addEventListener('click', mamaFunction);
+// startActivityButton.addEventListener('click', validateCategory);
+startActivityButton.addEventListener('click', mamaFunction);
 
 var selectedActivity = '';
 
@@ -46,11 +46,14 @@ function validateCategory(event) {
   event.preventDefault();
   if (selectedActivity === '') {
     return false;
-  //   hasError = true;
-  // } else {
-  //   hasError = false;
-  // }
+  } else {
+    return true;
+  }
 }
+//   hasError = true;
+// } else {
+//   hasError = false;
+// }
   // if (selectActivity.classList.contains("active")) {
   //   hasError = false;
   //   console.log("YOYO");
@@ -61,13 +64,23 @@ function validateCategory(event) {
   //   return 'no error';
   // }
 
-
+function mamaFunction(event) {
+  // event.preventDefault();
+  if (validateCategory(event) && validateDescription(event) && validateNum(event) && validateNumSec(event)) {
+    true;
+    hasError = false;
+    makeActivity(event);
+  }
+  // if category && minutes %% desctiption && seconds all return true,
+  //then, hasError = false;
+}
 
 function selectActivity(event) {
   event.preventDefault();
   if (activeButton) {
     activeButton.classList.remove("active")
     selectedActivity = '';
+
     // validateCategory(event)
   }
   selectedActivity = event.target.innerText;
@@ -96,10 +109,11 @@ currentActivity = new Activity(userCategory, descriptionInput, minutesInput, sec
 // function validateCategory(event) {
 //   event.preventDefault();
 //   if (currentActivity.category.innerText !== '' || currentActivity.category.innerText !== undefined) {
-//     hasError = false;
+//     return false;
+//   } else {
+//     return true;
 //   }
-//   makeActivity(event);
-//
+//   // makeActivity(event);
 // }
 
 // descriptionValue.addEventListener('keydown', validateDescription);
@@ -107,33 +121,36 @@ currentActivity = new Activity(userCategory, descriptionInput, minutesInput, sec
 function validateDescription(event) {
   event.preventDefault();
   if (descriptionInput.value === '' || descriptionInput.value === undefined) {
-    hasError = true;
     descriptionWarning.innerHTML = `<p class="warning-message"><img class="warning-img hidden" src="assets/warning.svg" alt="warning img">jail for mother!</p>`
+    return false;
   } else {
-      makeActivity(event);
+    return true;
+      // makeActivity(event);
   }
 }
 
-// function validateNum(event) {
-//   event.preventDefault();
-//   if (minutesInput.value.includes('e') || minutesInput.value === '' || parseInt(minutesInput.value) <= 0) {
-//     hasError = true;
-//     warningMessage.innerHTML = `<p><img class="warning-img hidden" src="assets/warning.svg" alt="warning img"/>Jail for a thousand years!</p>`
-//   //
-//   } else {
-//     validateNumSec(event);
-//   }
-// }
-//
-// function validateNumSec(event) {
-//   event.preventDefault();
-//   if (secondsInput.value.includes('e') || secondsInput.value === '' || parseInt(secondsInput.value) <= 0) {
-//     hasError = true;
-//     warningMessage.innerHTML = `<p><img class="warning-img hidden" src="assets/warning.svg" alt="warning img"/>FreeBird!</p>`
-//   } else {
-//     makeActivity(event);
-//   }
-// }
+function validateNum(event) {
+  event.preventDefault();
+  if (minutesInput.value.includes('e') || minutesInput.value === '' || parseInt(minutesInput.value) <= 0) {
+    warningMessage.innerHTML = `<p><img class="warning-img hidden" src="assets/warning.svg" alt="warning img"/>Jail for a thousand years!</p>`
+      return false;
+  //
+  } else {
+    return true;
+    // validateNumSec(event);
+  }
+}
+
+function validateNumSec(event) {
+  event.preventDefault();
+  if (secondsInput.value.includes('e') || secondsInput.value === '' || parseInt(secondsInput.value) <= 0) {
+    warningMessage.innerHTML = `<p><img class="warning-img hidden" src="assets/warning.svg" alt="warning img"/>FreeBird!</p>`
+    return false;
+  } else {
+    return true;
+    // makeActivity(event);
+  }
+}
 
 // function resetForm() {
 //
