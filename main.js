@@ -106,6 +106,26 @@ function validateNumSec(event) {
 }
 
 
+var countdown;
+  var timerDisplay = document.querySelector('.countdown');
+
+
+  function timer(minutes, seconds) {
+    var totalSeconds = (minutes * 60) + seconds;
+    var now = Date.now();
+    var target = now + totalSeconds * 1000;
+    displayTimeLeft(totalSeconds);
+    countdown = setInterval(() => {
+     var secondsLeft = Math.round((target - Date.now()) / 1000);
+     if (secondsLeft < 0) {
+      clearInterval(countdown)
+      return;
+    }
+    displayTimeLeft(secondsLeft);
+  }, 1000)
+ }
+
+ 
 
 
 
