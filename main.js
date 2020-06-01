@@ -23,7 +23,7 @@ var secondsInput = document.querySelector('.seconds-input');
 var descriptionWarning = document.querySelector('.description-warning');
 var activeButton = document.querySelector(".button.active");
 
-var hasError = true;
+// var hasError = true;
 var currentActivity;
 var savedActivity = [];
 var selectedActivity = '';
@@ -45,10 +45,10 @@ function validateCategory(event) {
 function mamaFunction(event) {
   if (validateCategory(event) && validateDescription(event) && validateNum(event) && validateNumSec(event)) {
     true;
-    hasError = false;
+    // hasError = false;
     makeActivity(event);
   }
-}  
+}
 
 function selectActivity(event) {
   event.preventDefault();
@@ -61,10 +61,8 @@ function selectActivity(event) {
   event.target.classList.add("active")
   selectedActivity = event.target.innerText;
 
-  // validateCategory(event);
 }
 
-// var userCategory = document.querySelector('.button')
 function makeActivity(event) {
 event.preventDefault();
 
@@ -78,80 +76,37 @@ currentActivity = new Activity(userCategory, descriptionInput, minutesInput, sec
 function validateDescription(event) {
   event.preventDefault();
   if (descriptionInput.value === '' || descriptionInput.value === undefined) {
-    descriptionWarning.innerHTML = `<p class="warning-message"><img class="warning-img hidden" src="assets/warning.svg" alt="warning img">jail for mother!</p>`
+    descriptionWarning.innerHTML = `<p class="warning-message"><img class="warning-img" src="assets/warning.svg" alt="warning img">jail for mother!</p>`
     return false;
   } else {
     descriptionWarning.innerHTML = '';
     return true;
-      // makeActivity(event);
   }
 }
 
 function validateNum(event) {
   event.preventDefault();
-  if (minutesInput.value.includes('e') || minutesInput.value === '' ||      parseInt(minutesInput.value) <= 0) {
-    warningMessage.innerHTML = `<p><img class="warning-img hidden" src="assets/warning.svg" alt="warning img"/>Jail for a thousand years!</p>`
+  if (minutesInput.value.includes('e') || minutesInput.value === '' ||  parseInt(minutesInput.value) <= 0) {
+    warningMessage.innerHTML = `<p><img class="warning-img" src="assets/warning.svg" alt="warning img"/>Jail for a thousand years!</p>`
   return false;
   } else {
     warningMessage.innerHTML = '';
     return true;
-    // validateNumSec(event);
   }
 }
 
 function validateNumSec(event) {
   event.preventDefault();
   if (secondsInput.value.includes('e') || secondsInput.value === '' || parseInt(secondsInput.value) <= 0) {
-    warningMessage.innerHTML = `<p><img class="warning-img hidden" src="assets/warning.svg" alt="warning img"/>FreeBird!</p>`
+    warningMessage.innerHTML = `<p><img class="warning-img" src="assets/warning.svg" alt="warning img"/>FreeBird!</p>`
     return false;
   } else {
     return true;
-    // makeActivity(event);
   }
 }
 
 
 
-// function validateCategory(event) {
-//   event.preventDefault();
-//   if (currentActivity.category.innerText !== '' || currentActivity.category.innerText !== undefined) {
-//     return false;
-//   } else {
-//     return true;
-//   }
-//   // makeActivity(event);
-// }
-
-// descriptionValue.addEventListener('keydown', validateDescription);
-
-
-// userCategory = activeButton.innerText;
-// descriptionInput = descriptionInput.value;
-// minutesInput = minutesInput.value;
-// secondsInput = secondsInput.value;
- //reset form();
- //showTimer();
-
-// function resetForm() {
-// }
-//   hasError = true;
-// } else {
-//   hasError = false;
-// }
-  // if (selectActivity.classList.contains("active")) {
-  //   hasError = false;
-  //   console.log("YOYO");
-  // }
-  // event.preventDefault();
-  // if (activeButton) {
-  //   hasError = false;
-  //   return 'no error';
-  // }
-
-
-//descriptionInput.innerText = currentActivity.description;
-//   minutesInput.innerText = currentActivity.minutes;
-//   secondsInput.innerText = currentCover.seconds;
 
 
 // Form Functionality
