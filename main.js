@@ -125,7 +125,15 @@ var countdown;
   }, 1000)
  }
 
- 
+ function displayTimeLeft(totalSeconds) {
+   var minutes = Math.floor (totalSeconds / 60);
+   var remainderSeconds = totalSeconds % 60;
+   var display = `${minutes}:${remainderSeconds < 10 ? '0' : ''}${remainderSeconds}`;
+   timerDisplay.textContent = display;
+ }
+
+ // timer(minutes, seconds);
+
 
 
 
