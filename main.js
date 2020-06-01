@@ -23,7 +23,7 @@ var secondsInput = document.querySelector('.seconds-input');
 var descriptionWarning = document.querySelector('.description-warning');
 
 
-var hasError;
+var hasError = true;
 var currentActivity;
 var savedActivity = [];
 
@@ -38,26 +38,39 @@ exerciseButton.addEventListener('click', selectActivity);
 var activeButton = document.querySelector(".button.active");
 
 startActivityButton.addEventListener('click', validateCategory);
+// startActivityButton.addEventListener('click', mamaFunction);
+
+var selectedActivity = '';
 
 function validateCategory(event) {
   event.preventDefault();
-  if (studyButton.classList.contains("active")) {
-    hasError = false;
-    return "YOYO"
-  }
+  if (selectedActivity === '') {
+    return false;
+  //   hasError = true;
+  // } else {
+  //   hasError = false;
+  // }
+}
+  // if (selectActivity.classList.contains("active")) {
+  //   hasError = false;
+  //   console.log("YOYO");
+  // }
   // event.preventDefault();
   // if (activeButton) {
   //   hasError = false;
   //   return 'no error';
   // }
-}
+
+
 
 function selectActivity(event) {
   event.preventDefault();
   if (activeButton) {
     activeButton.classList.remove("active")
+    selectedActivity = '';
     // validateCategory(event)
   }
+  selectedActivity = event.target.innerText;
   event.target.classList.add("active")
   // validateCategory(event);
 }
