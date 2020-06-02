@@ -1,3 +1,7 @@
+* {
+  font-family: Montserrat;
+}
+
 body {
   background: #2b2733;
   margin: 0;
@@ -16,7 +20,6 @@ main {
 }
 
 .main-title, p, label {
-  font-family: Montserrat;
   font-weight: 400;
   color: #fff;
 }
@@ -32,7 +35,6 @@ label {
 }
 
 .new-activity-title, .past-activities-title {
-  font-family: Montserrat;
   font-weight: 300;
   color: #cbc9cf;
   padding-top: 5%;
@@ -147,10 +149,10 @@ label {
   padding-left: 5%;
 }
 
-.past-activity-container {
+.past-activity-view {
   border-left: 2px solid #46424d;
   width: 30%;
-  padding-left: 5%;
+  padding: 0 5%;
 }
 
  .past-text {
@@ -234,7 +236,6 @@ input::-webkit-inner-spin-button {
 
 .timer-description-display {
   margin-top: 1.5em;
-  font-family: Montserrat;
   font-weight: 400;
   font-size: 2em;
   color: #CBC9CF;
@@ -263,6 +264,17 @@ input::-webkit-inner-spin-button {
   background: white;
 }
 
+.activity-card {
+  background: #46424d;
+}
+
+.card-category {
+    color: #fff;
+}
+
+.card-time, .card-description {
+  color: #cbc9cf
+}
 
 .hidden {
   display: none;
