@@ -23,8 +23,10 @@ var secondsInput = document.querySelector('.seconds-input');
 
 var descriptionWarning = document.querySelector('.description-warning');
 var activeButton = document.querySelector(".button.active");
-var formDisplay = document.querySelector('.new-activity-container')
-var showTimer =document.querySelector('.timer-view')
+var formDisplay = document.querySelector('.new-activity-container');
+var showTimer =document.querySelector('.timer-view');
+var activityEncompassContainer = document.querySelector('.activity-encompass-container')
+var startTimerButton = document.querySelector('.timer-start-button')
 
 // var hasError = true;
 var currentActivity;
@@ -35,6 +37,7 @@ studyButton.addEventListener('click', selectActivity);
 meditateButton.addEventListener('click', selectActivity);
 exerciseButton.addEventListener('click', selectActivity);
 startActivityButton.addEventListener('click', mamaFunction);
+startTimerButton.addEventListener('click', startTimer);
 
 function validateCategory() {
   // event.preventDefault();
@@ -54,10 +57,6 @@ function mamaFunction(event) {
   var totalSeconds = currentActivity.minutes * 60 + currentActivity.seconds;
   displayTimeLeft(totalSeconds);
   toggleTimer();
-
-      //hide form
-      // 01 z value and switch class higher z value
-
   }
 }
 
@@ -71,7 +70,6 @@ function selectActivity(event) {
   }
   event.target.classList.add("active")
   selectedActivity = event.target.innerText;
-
 }
 
 function makeActivity(event) {
@@ -119,8 +117,6 @@ function validateNumSec(event) {
 var countdown;
   var timerDisplay = document.querySelector('.countdown');
 
-
-
  function displayTimeLeft(totalSeconds) {
    var minutes = Math.floor (totalSeconds / 60);
    var remainderSeconds = totalSeconds % 60;
@@ -128,16 +124,14 @@ var countdown;
    timerDisplay.innerText = display;
  }
 
-
- var activityEncompassContainer = document.querySelector('.activity-encompass-container')
-
-
  function toggleTimer() {
   activityEncompassContainer.classList.toggle('hidden');
    showTimer.classList.toggle('hidden');
-
  }
 
+ function startTimer() {
+   currentActivity.timer()
+ }
 
 
 
