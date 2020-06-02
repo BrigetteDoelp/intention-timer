@@ -232,10 +232,6 @@ input::-webkit-inner-spin-button {
   text-align: center;
 }
 
-.hidden {
-  display: none;
-}
-
 .timer-description-display {
   margin-top: 1.5em;
   font-family: Montserrat;
@@ -255,4 +251,19 @@ input::-webkit-inner-spin-button {
   width: 20em;
   border-radius: 50%;
   outline: none;
+}
+
+.log-activity-button {
+  display: block;
+  margin: auto;
+  color: #46424d;
+  height: 3.5em;
+  width: 15em;
+  border: 2px solid #fff;
+  background: white;
+}
+
+
+.hidden {
+  display: none;
 }
