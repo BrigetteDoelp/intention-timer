@@ -57,7 +57,7 @@ function mamaFunction(event) {
 }
 
 function selectActivity(event) {
-  event.preventDefault();
+  // event.preventDefault();
   var activeButton = document.querySelector(".button.active");
   if (activeButton) {
     activeButton.classList.remove("active")
@@ -67,9 +67,8 @@ function selectActivity(event) {
   selectedActivity = event.target.innerText;
 }
 
-function makeActivity(event) {
-  event.preventDefault();
-
+function makeActivity() {
+  // event.preventDefault();
   var userCategory = document.querySelector(".button.active").innerText;
   var descriptionInput = document.querySelector('.description-input').value;
   var minutesInput = document.querySelector('.minutes-input').value;
@@ -77,8 +76,8 @@ function makeActivity(event) {
   currentActivity = new Activity(userCategory, descriptionInput, parseInt(minutesInput), parseInt(secondsInput));
 };
 
-function validateDescription(event) {
-  event.preventDefault();
+function validateDescription() {
+  // event.preventDefault();
   if (descriptionInput.value === '' || descriptionInput.value === undefined) {
     descriptionWarning.innerHTML = `<p class="warning-message"><img class="warning-img" src="assets/warning.svg" alt="warning img">jail for mother!</p>`
     return false;
@@ -88,9 +87,9 @@ function validateDescription(event) {
   }
 }
 
-function validateNum(event) {
-  event.preventDefault();
-  if (minutesInput.value.includes('e') || minutesInput.value === '' ||  parseInt(minutesInput.value) <= 0) {
+function validateNum() {
+  // event.preventDefault();
+  if (minutesInput.value.includes('e') || minutesInput.value === '' ||  parseInt(minutesInput.value) < 0) {
     warningMessage.innerHTML = `<p><img class="warning-img" src="assets/warning.svg" alt="warning img"/>Jail for a thousand years!</p>`
   return false;
   } else {
@@ -99,8 +98,8 @@ function validateNum(event) {
   }
 }
 
-function validateNumSec(event) {
-  event.preventDefault();
+function validateNumSec() {
+  // event.preventDefault();
   if (secondsInput.value.includes('e') || secondsInput.value === '' || parseInt(secondsInput.value) < 0) {
     warningMessage.innerHTML = `<p><img class="warning-img" src="assets/warning.svg" alt="warning img"/>FreeBird!</p>`
     return false;
@@ -115,6 +114,7 @@ function validateNumSec(event) {
    var remainderSeconds = totalSeconds % 60;
    var display = `${minutes}:${remainderSeconds < 10 ? '0' : ''}${remainderSeconds}`;
    timerDisplay.innerText = display;
+   showAlert(display);
  }
 
  function toggleTimer() {
@@ -130,29 +130,18 @@ function displayDescription() {
   timerDescriptionDisplay.innerText = descriptionInput.value;
 }
 
-// function showAlert() {
-//   if (minutes === 0 && remainderSeconds === 0)
-//     alert("complete");
-// }
-
-
-// Form Functionality
-// When an activity category is clicked on (Exercise, Meditate, or Study),
-// the associated border and icon should change colors to give a visual indication that it has been selected.
-// Colors are provided in comp.
+function showAlert(display) {
+  console.log(timerDisplay.innerText);
+  console.log(timerDisplay.innerText == '0:00');
+  if (timerDisplay.innerText == '0:00') {
+    setTimeout(function() { alert("complete"); }, 1)
+  }
+}
 //
-// An input field should be provided for What would you like to accomplish during this time?,
-// minutes and seconds. The minutes and seconds fields should only accept numbers.
-// (Hint: more than one layer should probably be put into place to ensure this.
-//   Make sure that e cannot be accepted.)
+// Iteration 3 - Build an MVP
+// STOP! Did you refactor Iteration 2? Clean up your code before moving on!
 //
-// A Start Activity button is provided to submit the data entered into the form.
-// When the button is clicked, update your data model with an instance of the Activity class.
-//
-// When the Start Activity button is clicked, the user should no longer see the form,
-// and instead see a timer clock. The timer clock should display the user-provided minutes and seconds,
-// as well as the description. The category should not appear, but the outline of the circle
-// should match the color associated with the category.
-//
-// If the Start Activity button is clicked before the user has entered information into all four inputs,
-// the user will receive an error message, but will not lose any information that was provided.
+// The user can start the time by clicking Start.
+// While timer is running, the user should see it count down by second.
+// When the timer completes, an alert should appear in the browser, letting the user know that the time is up and the activity has been completed.
+// NOTE: This alert is temporary and is not something we suggest using in a fully built out application.
