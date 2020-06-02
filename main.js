@@ -20,8 +20,13 @@ var activeButton = document.querySelector(".button.active");
 var descriptionInput = document.querySelector('.description-input');
 var minutesInput = document.querySelector('.minutes-input');
 var secondsInput = document.querySelector('.seconds-input');
+
 var descriptionWarning = document.querySelector('.description-warning');
 var activeButton = document.querySelector(".button.active");
+var formDisplay = document.querySelector('.new-activity-container');
+var showTimer =document.querySelector('.timer-view');
+var activityEncompassContainer = document.querySelector('.activity-encompass-container')
+var startTimerButton = document.querySelector('.timer-start-button')
 
 // var hasError = true;
 var currentActivity;
@@ -32,9 +37,10 @@ studyButton.addEventListener('click', selectActivity);
 meditateButton.addEventListener('click', selectActivity);
 exerciseButton.addEventListener('click', selectActivity);
 startActivityButton.addEventListener('click', mamaFunction);
+startTimerButton.addEventListener('click', startTimer);
 
-function validateCategory(event) {
-  event.preventDefault();
+function validateCategory() {
+  // event.preventDefault();
   if (selectedActivity === '') {
     return false;
   } else {
@@ -43,10 +49,14 @@ function validateCategory(event) {
 }
 
 function mamaFunction(event) {
+  event.preventDefault();
   if (validateCategory(event) && validateDescription(event) && validateNum(event) && validateNumSec(event)) {
-    true;
+    // true; dont need. above is true to itself
     // hasError = false;
-    makeActivity(event);
+  makeActivity(event);
+  var totalSeconds = currentActivity.minutes * 60 + currentActivity.seconds;
+  displayTimeLeft(totalSeconds);
+  toggleTimer();
   }
 }
 
@@ -60,17 +70,16 @@ function selectActivity(event) {
   }
   event.target.classList.add("active")
   selectedActivity = event.target.innerText;
-
 }
 
 function makeActivity(event) {
-event.preventDefault();
+  event.preventDefault();
 
-var userCategory = document.querySelector(".button.active").innerText;
-var descriptionInput = document.querySelector('.description-input').value;
-var minutesInput = document.querySelector('.minutes-input').value;
-var secondsInput = document.querySelector('.seconds-input').value;
-currentActivity = new Activity(userCategory, descriptionInput, minutesInput, secondsInput);
+  var userCategory = document.querySelector(".button.active").innerText;
+  var descriptionInput = document.querySelector('.description-input').value;
+  var minutesInput = document.querySelector('.minutes-input').value;
+  var secondsInput = document.querySelector('.seconds-input').value;
+  currentActivity = new Activity(userCategory, descriptionInput, parseInt(minutesInput), parseInt(secondsInput));
 };
 
 function validateDescription(event) {
@@ -105,34 +114,24 @@ function validateNumSec(event) {
   }
 }
 
-
 var countdown;
   var timerDisplay = document.querySelector('.countdown');
-
-
-  function timer(minutes, seconds) {
-    var totalSeconds = (minutes * 60) + seconds;
-    var now = Date.now();
-    var target = now + totalSeconds * 1000;
-    displayTimeLeft(totalSeconds);
-    countdown = setInterval(() => {
-     var secondsLeft = Math.round((target - Date.now()) / 1000);
-     if (secondsLeft < 0) {
-      clearInterval(countdown)
-      return;
-    }
-    displayTimeLeft(secondsLeft);
-  }, 1000)
- }
 
  function displayTimeLeft(totalSeconds) {
    var minutes = Math.floor (totalSeconds / 60);
    var remainderSeconds = totalSeconds % 60;
    var display = `${minutes}:${remainderSeconds < 10 ? '0' : ''}${remainderSeconds}`;
-   timerDisplay.textContent = display;
+   timerDisplay.innerText = display;
  }
 
- // timer(minutes, seconds);
+ function toggleTimer() {
+  activityEncompassContainer.classList.toggle('hidden');
+   showTimer.classList.toggle('hidden');
+ }
+
+ function startTimer() {
+   currentActivity.timer()
+ }
 
 
 

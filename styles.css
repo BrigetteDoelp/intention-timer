@@ -207,16 +207,13 @@ form > section {
   margin-left: auto;
   color: #46424d;
   padding: .5em 1.5em;
+  background-color: #cbc9cf;
 
 }
 
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
-}
-
-.hidden {
-  display: none;
 }
 
 .warning-message {
@@ -229,11 +226,15 @@ input::-webkit-inner-spin-button {
   height: 14px;
   width: 14px;
 }
+
 .timer-view {
   display: block;
   text-align: center;
 }
 
+.hidden {
+  display: none;
+}
 
 .timer-description-display {
   color: blue
@@ -250,5 +251,5 @@ input::-webkit-inner-spin-button {
   height: 12em;
   width: 12em;
   border-radius: 50%;
-  border-color: blue
+  border-color: blue;
 }
