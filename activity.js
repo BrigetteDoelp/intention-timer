@@ -9,9 +9,22 @@ class Activity {
     this.completed = false;
   }
 
-  beginTime() {
-
+  timer() {
+    var totalSeconds = (this.minutes * 60) + this.seconds;
+    var now = Date.now();
+    var target = now + totalSeconds * 1000;
+    displayTimeLeft(totalSeconds);
+    countdown = setInterval(() => {
+     var secondsLeft = Math.round((target - Date.now()) / 1000);
+     if (secondsLeft < 0) {
+      clearInterval(countdown)
+      return;
+    }
+    displayTimeLeft(secondsLeft);
+    }, 1000)
   }
+
+
 
   markComplete() {
 
