@@ -121,18 +121,24 @@ function showAlert(display) {
 }
 
 function logActivity() {
-  currentActivity.completed = true;
+  currentActivity.markComplete();
   savedActivities.push(currentActivity);
   displayLoggedActivity(currentActivity);
 }
 
 function displayLoggedActivity(activity) {
   var activityCardContainer = document.querySelector(".past-activity-container");
-  var activityTemplate = `<div class="activity-card" >
-    <h4 class="card-category">${activity.category}</h4>
-    <p class="card-time">${activity.minutes} MINUTES ${activity.seconds} SECONDS</p>
-    <p class="card-description">${activity.description}</p>
-  </div>`;
+  var activityTemplate = `
+    <div class="activity-card" >
+      <div class="card-text">
+        <h4 class="card-category">${activity.category}</h4>
+        <p class="card-time">${activity.minutes} MINUTES ${activity.seconds} SECONDS</p>
+        <p class="card-description">${activity.description}</p>
+      </div>
+      <div class="card-color">
+      </div>
+    </div>
+  `;
   if (savedActivities.length === 1) {
     activityCardContainer.innerHTML = "";
   }
