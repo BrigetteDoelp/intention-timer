@@ -37,18 +37,11 @@ exerciseButton.addEventListener('click', selectActivity);
 startActivityButton.addEventListener('click', mamaFunction);
 startTimerButton.addEventListener('click', startTimer);
 
-function validateCategory() {
-  if (selectedActivity === '') {
-    return false;
-  } else {
-    return true;
-  }
-}
 
 function mamaFunction(event) {
   event.preventDefault();
-  if (validateCategory(event) && validateDescription(event) && validateNum(event) && validateNumSec(event)) {
-  makeActivity(event);
+  if (validateCategory() && validateDescription() && validateNum() && validateNumSec()) {
+  makeActivity();
   var totalSeconds = currentActivity.minutes * 60 + currentActivity.seconds;
   displayTimeLeft(totalSeconds);
   toggleTimer();
@@ -57,7 +50,7 @@ function mamaFunction(event) {
 }
 
 function selectActivity(event) {
-  // event.preventDefault();
+  event.preventDefault();
   var activeButton = document.querySelector(".button.active");
   if (activeButton) {
     activeButton.classList.remove("active")
@@ -68,16 +61,22 @@ function selectActivity(event) {
 }
 
 function makeActivity() {
-  // event.preventDefault();
   var userCategory = document.querySelector(".button.active").innerText;
   var descriptionInput = document.querySelector('.description-input').value;
   var minutesInput = document.querySelector('.minutes-input').value;
   var secondsInput = document.querySelector('.seconds-input').value;
   currentActivity = new Activity(userCategory, descriptionInput, parseInt(minutesInput), parseInt(secondsInput));
-};
+}
+
+function validateCategory() {
+  if (selectedActivity === '') {
+    return false;
+  } else {
+    return true;
+  }
+}
 
 function validateDescription() {
-  // event.preventDefault();
   if (descriptionInput.value === '' || descriptionInput.value === undefined) {
     descriptionWarning.innerHTML = `<p class="warning-message"><img class="warning-img" src="assets/warning.svg" alt="warning img">jail for mother!</p>`
     return false;
@@ -88,7 +87,6 @@ function validateDescription() {
 }
 
 function validateNum() {
-  // event.preventDefault();
   if (minutesInput.value.includes('e') || minutesInput.value === '' ||  parseInt(minutesInput.value) < 0) {
     warningMessage.innerHTML = `<p><img class="warning-img" src="assets/warning.svg" alt="warning img"/>Jail for a thousand years!</p>`
   return false;
@@ -99,7 +97,6 @@ function validateNum() {
 }
 
 function validateNumSec() {
-  // event.preventDefault();
   if (secondsInput.value.includes('e') || secondsInput.value === '' || parseInt(secondsInput.value) < 0) {
     warningMessage.innerHTML = `<p><img class="warning-img" src="assets/warning.svg" alt="warning img"/>FreeBird!</p>`
     return false;
