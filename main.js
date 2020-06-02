@@ -23,13 +23,13 @@ var showTimer =document.querySelector('.timer-view');
 var activityEncompassContainer = document.querySelector('.activity-encompass-container');
 var startTimerButton = document.querySelector('.timer-start-button');
 var timerDescriptionDisplay = document.querySelector('.timer-description-display');
+var timerDisplay = document.querySelector('.countdown');
 
 // var hasError = true;
 var currentActivity;
 var savedActivity = [];
 var selectedActivity = '';
 var countdown;
-var timerDisplay = document.querySelector('.countdown');
 
 studyButton.addEventListener('click', selectActivity);
 meditateButton.addEventListener('click', selectActivity);
@@ -101,13 +101,14 @@ function validateNum(event) {
 
 function validateNumSec(event) {
   event.preventDefault();
-  if (secondsInput.value.includes('e') || secondsInput.value === '' || parseInt(secondsInput.value) <= 0) {
+  if (secondsInput.value.includes('e') || secondsInput.value === '' || parseInt(secondsInput.value) < 0) {
     warningMessage.innerHTML = `<p><img class="warning-img" src="assets/warning.svg" alt="warning img"/>FreeBird!</p>`
     return false;
   } else {
     return true;
   }
 }
+
 
  function displayTimeLeft(totalSeconds) {
    var minutes = Math.floor (totalSeconds / 60);
@@ -128,6 +129,11 @@ function validateNumSec(event) {
 function displayDescription() {
   timerDescriptionDisplay.innerText = descriptionInput.value;
 }
+
+// function showAlert() {
+//   if (minutes === 0 && remainderSeconds === 0)
+//     alert("complete");
+// }
 
 
 // Form Functionality
