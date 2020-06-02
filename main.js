@@ -135,7 +135,7 @@ function displayLoggedActivity(activity) {
         <p class="card-time">${activity.minutes} MINUTES ${activity.seconds} SECONDS</p>
         <p class="card-description">${activity.description}</p>
       </div>
-      <div class="card-color">
+      <div class="card-color" data-category=${activity.category}>
       </div>
     </div>
   `;
