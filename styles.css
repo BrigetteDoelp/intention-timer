@@ -237,19 +237,22 @@ input::-webkit-inner-spin-button {
 }
 
 .timer-description-display {
-  color: blue
+  margin-top: 1.5em;
+  font-family: Montserrat;
+  font-weight: 400;
+  font-size: 2em;
+  color: #CBC9CF;
 }
 
 .countdown {
-  margin-top: 1em;
-  color: blue;
-  font-size: 2em;
+  color: #CBC9CF;
+  font-size: 6em;
 }
 
 .timer-start-button {
-  margin: 2em  auto;
-  height: 12em;
-  width: 12em;
+  margin: 3em  auto;
+  height: 20em;
+  width: 20em;
   border-radius: 50%;
-  border-color: blue;
+  outline: none;
 }
