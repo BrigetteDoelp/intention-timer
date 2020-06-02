@@ -37,7 +37,6 @@ exerciseButton.addEventListener('click', selectActivity);
 startActivityButton.addEventListener('click', mamaFunction);
 startTimerButton.addEventListener('click', startTimer);
 
-
 function mamaFunction(event) {
   event.preventDefault();
   if (validateCategory() && validateDescription() && validateNum() && validateNumSec()) {
@@ -89,7 +88,7 @@ function validateDescription() {
 function validateNum() {
   if (minutesInput.value.includes('e') || minutesInput.value === '' ||  parseInt(minutesInput.value) < 0) {
     warningMessage.innerHTML = `<p><img class="warning-img" src="assets/warning.svg" alt="warning img"/>Jail for a thousand years!</p>`
-  return false;
+    return false;
   } else {
     warningMessage.innerHTML = '';
     return true;
@@ -98,40 +97,37 @@ function validateNum() {
 
 function validateNumSec() {
   if (secondsInput.value.includes('e') || secondsInput.value === '' || parseInt(secondsInput.value) < 0) {
-    warningMessage.innerHTML = `<p><img class="warning-img" src="assets/warning.svg" alt="warning img"/>FreeBird!</p>`
+    warningMessage.innerHTML = `<p><img class="warning-img" src="assets/warning.svg" alt="warning img"/>FreeBird!</p>`;
     return false;
   } else {
     return true;
   }
 }
 
+function displayTimeLeft(totalSeconds) {
+  var minutes = Math.floor (totalSeconds / 60);
+  var remainderSeconds = totalSeconds % 60;
+  var display = `${minutes < 10 ? '0' : ''}${minutes}:${remainderSeconds < 10 ? '0' : ''}${remainderSeconds}`;
+  timerDisplay.innerText = display;
+  showAlert(display);
+}
 
- function displayTimeLeft(totalSeconds) {
-   var minutes = Math.floor (totalSeconds / 60);
-   var remainderSeconds = totalSeconds % 60;
-   var display = `${minutes}:${remainderSeconds < 10 ? '0' : ''}${remainderSeconds}`;
-   timerDisplay.innerText = display;
-   showAlert(display);
- }
-
- function toggleTimer() {
+function toggleTimer() {
   activityEncompassContainer.classList.toggle('hidden');
-   showTimer.classList.toggle('hidden');
- }
+  showTimer.classList.toggle('hidden');
+}
 
- function startTimer() {
-   currentActivity.timer()
- }
+function startTimer() {
+  currentActivity.timer();
+}
 
 function displayDescription() {
   timerDescriptionDisplay.innerText = descriptionInput.value;
 }
 
 function showAlert(display) {
-  console.log(timerDisplay.innerText);
-  console.log(timerDisplay.innerText == '0:00');
-  if (timerDisplay.innerText == '0:00') {
-    setTimeout(function() { alert("complete"); }, 1)
+  if (timerDisplay.innerText == '00:00') {
+    setTimeout(function() { alert("complete"); }, 1);
   }
 }
 //
