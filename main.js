@@ -115,6 +115,20 @@ function displayDescription() {
 
 function showAlert(display) {
   if (timerDisplay.innerText == '00:00') {
-    setTimeout(function() { alert("complete"); }, 1);
+    logActivityButton.classList.remove('hidden');
+    startTimerButton.innerText = "COMPLETE!";
   }
 }
+
+function logActivity() {
+  currentActivity.completed = true;
+  savedActivity.push(currentActivity);
+}
+
+function displayLoggedActivity() {
+  
+}
+// When the timer completes, the alert no longer appears.
+// Instead, a motivational or congratulatory message appears
+// When the user clicks Log Activity, a card with the category, time, and the users input for What would you like to accomplish during this time? should appear on the card. The card should also have a small color-coded visual indicator of the category. Color, size, and spacing of that visual indicator are provided in comp.
+// Before moving on, your past activity cards should match the comp.
