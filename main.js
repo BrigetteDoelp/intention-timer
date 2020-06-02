@@ -129,6 +129,17 @@ var countdown;
  }
 
 
+ var activityEncompassContainer = document.querySelector('.activity-encompass-container')
+
+
+ function toggleTimer() {
+  activityEncompassContainer.classList.toggle('hidden');
+   showTimer.classList.toggle('hidden');
+
+ }
+
+
+
 
 
 // Form Functionality
