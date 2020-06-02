@@ -266,10 +266,36 @@ input::-webkit-inner-spin-button {
 
 .activity-card {
   background: #46424d;
+  display: flex;
+  padding: 15px;
+  margin: 1em 0;
+}
+
+.card-color {
+  width: .25em;
+  height: 3em;
+  background-color: red;
+}
+
+.card-color[data-category="Study"] {
+  background-color: #b3fd78;
+}
+
+.card-color[data-category="Meditate"] {
+  background-color: #C278FD;
+}
+
+.card-color[data-category="Exercise"] {
+  background-color: #FD8078;
+}
+
+
+.card-text {
+  width: 95%;
 }
 
 .card-category {
-    color: #fff;
+  color: #fff;
 }
 
 .card-time, .card-description {
