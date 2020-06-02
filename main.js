@@ -12,7 +12,7 @@ var logActivityButton = document.querySelector('.log-activity-button')
 
 
 var currentActivity;
-var savedActivity = [];
+var savedActivities = [];
 var selectedActivity = '';
 var countdown;
 
@@ -122,7 +122,7 @@ function showAlert(display) {
 
 function logActivity() {
   currentActivity.completed = true;
-  savedActivity.push(currentActivity);
+  savedActivities.push(currentActivity);
   displayLoggedActivity(currentActivity);
 }
 
@@ -133,6 +133,9 @@ function displayLoggedActivity(activity) {
     <p class="card-time">${activity.minutes} MINUTES ${activity.seconds} SECONDS</p>
     <p class="card-description">${activity.description}</p>
   </div>`;
+  if (savedActivities.length === 1) {
+    activityCardContainer.innerHTML = "";
+  }
   activityCardContainer.insertAdjacentHTML("beforeend", activityTemplate);
 }
 
