@@ -123,11 +123,19 @@ function showAlert(display) {
 function logActivity() {
   currentActivity.completed = true;
   savedActivity.push(currentActivity);
+  displayLoggedActivity(currentActivity);
 }
 
-function displayLoggedActivity() {
-  
+function displayLoggedActivity(activity) {
+  var activityCardContainer = document.querySelector(".past-activity-container");
+  var activityTemplate = `<div class="activity-card" >
+    <h4 class="card-category">${activity.category}</h4>
+    <p class="card-time">${activity.minutes} MINUTES ${activity.seconds} SECONDS</p>
+    <p class="card-description">${activity.description}</p>
+  </div>`;
+  activityCardContainer.insertAdjacentHTML("beforeend", activityTemplate);
 }
+
 // When the timer completes, the alert no longer appears.
 // Instead, a motivational or congratulatory message appears
 // When the user clicks Log Activity, a card with the category, time, and the users input for What would you like to accomplish during this time? should appear on the card. The card should also have a small color-coded visual indicator of the category. Color, size, and spacing of that visual indicator are provided in comp.
