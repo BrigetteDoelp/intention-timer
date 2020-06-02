@@ -8,6 +8,8 @@ var secondsInput = document.querySelector('.seconds-input');
 var warningMessage = document.querySelector('.warning-message-number');
 var startTimerButton = document.querySelector('.timer-start-button');
 var timerDisplay = document.querySelector('.countdown');
+var logActivityButton = document.querySelector('.log-activity-button')
+
 
 var currentActivity;
 var savedActivity = [];
@@ -19,6 +21,8 @@ meditateButton.addEventListener('click', selectActivity);
 exerciseButton.addEventListener('click', selectActivity);
 startActivityButton.addEventListener('click', mamaFunction);
 startTimerButton.addEventListener('click', startTimer);
+logActivityButton.addEventListener('click', logActivity);
+
 
 function mamaFunction(event) {
   event.preventDefault();
