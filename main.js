@@ -2,30 +2,13 @@ var studyButton = document.querySelector('.study-button');
 var meditateButton = document.querySelector('.meditate-button');
 var exerciseButton = document.querySelector('.exercise-button');
 var startActivityButton = document.querySelector('.start-activity-button');
-var studyImg = document.querySelector('.study-img');
-var studyActiveImg = document.querySelector('.study-active-img');
-var studyButtonActive = document.querySelector('.study-button-active');
-var meditateImg = document.querySelector('.meditate-img');
-var meditateActiveImg = document.querySelector('.meditate-active-img');
-var meditateButtonActive = document.querySelector('.meditate-button-active');
-var exerciseImg = document.querySelector('.exercise-img');
-var exerciseActiveImg = document.querySelector('.exercise-active-img');
-var exerciseButtonActive = document.querySelector('.exercise-button-active');
-var activeButton = document.querySelector(".button.active");
 var descriptionInput = document.querySelector('.description-input');
 var minutesInput = document.querySelector('.minutes-input');
 var secondsInput = document.querySelector('.seconds-input');
 var warningMessage = document.querySelector('.warning-message-number');
-var descriptionWarning = document.querySelector('.description-warning');
-var activeButton = document.querySelector(".button.active");
-var formDisplay = document.querySelector('.new-activity-container');
-var showTimer =document.querySelector('.timer-view');
-var activityEncompassContainer = document.querySelector('.activity-encompass-container');
 var startTimerButton = document.querySelector('.timer-start-button');
-var timerDescriptionDisplay = document.querySelector('.timer-description-display');
 var timerDisplay = document.querySelector('.countdown');
 
-// var hasError = true;
 var currentActivity;
 var savedActivity = [];
 var selectedActivity = '';
@@ -40,11 +23,11 @@ startTimerButton.addEventListener('click', startTimer);
 function mamaFunction(event) {
   event.preventDefault();
   if (validateCategory() && validateDescription() && validateNum() && validateNumSec()) {
-  makeActivity();
-  var totalSeconds = currentActivity.minutes * 60 + currentActivity.seconds;
-  displayTimeLeft(totalSeconds);
-  toggleTimer();
-  displayDescription();
+    makeActivity();
+    var totalSeconds = currentActivity.minutes * 60 + currentActivity.seconds;
+    displayTimeLeft(totalSeconds);
+    toggleTimer();
+    displayDescription();
   }
 }
 
@@ -61,10 +44,7 @@ function selectActivity(event) {
 
 function makeActivity() {
   var userCategory = document.querySelector(".button.active").innerText;
-  var descriptionInput = document.querySelector('.description-input').value;
-  var minutesInput = document.querySelector('.minutes-input').value;
-  var secondsInput = document.querySelector('.seconds-input').value;
-  currentActivity = new Activity(userCategory, descriptionInput, parseInt(minutesInput), parseInt(secondsInput));
+  currentActivity = new Activity(userCategory, descriptionInput.value, parseInt(minutesInput.value), parseInt(secondsInput.value));
 }
 
 function validateCategory() {
@@ -76,6 +56,7 @@ function validateCategory() {
 }
 
 function validateDescription() {
+  var descriptionWarning = document.querySelector('.description-warning');
   if (descriptionInput.value === '' || descriptionInput.value === undefined) {
     descriptionWarning.innerHTML = `<p class="warning-message"><img class="warning-img" src="assets/warning.svg" alt="warning img">jail for mother!</p>`
     return false;
@@ -113,6 +94,8 @@ function displayTimeLeft(totalSeconds) {
 }
 
 function toggleTimer() {
+  var activityEncompassContainer = document.querySelector('.activity-encompass-container');
+  var showTimer = document.querySelector('.timer-view');
   activityEncompassContainer.classList.toggle('hidden');
   showTimer.classList.toggle('hidden');
 }
@@ -122,6 +105,7 @@ function startTimer() {
 }
 
 function displayDescription() {
+  var timerDescriptionDisplay = document.querySelector('.timer-description-display');
   timerDescriptionDisplay.innerText = descriptionInput.value;
 }
 
@@ -130,11 +114,3 @@ function showAlert(display) {
     setTimeout(function() { alert("complete"); }, 1);
   }
 }
-//
-// Iteration 3 - Build an MVP
-// STOP! Did you refactor Iteration 2? Clean up your code before moving on!
-//
-// The user can start the time by clicking Start.
-// While timer is running, the user should see it count down by second.
-// When the timer completes, an alert should appear in the browser, letting the user know that the time is up and the activity has been completed.
-// NOTE: This alert is temporary and is not something we suggest using in a fully built out application.
