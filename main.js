@@ -16,22 +16,20 @@ var descriptionInput = document.querySelector('.description-input');
 var minutesInput = document.querySelector('.minutes-input');
 var secondsInput = document.querySelector('.seconds-input');
 var warningMessage = document.querySelector('.warning-message-number');
-var activeButton = document.querySelector(".button.active");
-var descriptionInput = document.querySelector('.description-input');
-var minutesInput = document.querySelector('.minutes-input');
-var secondsInput = document.querySelector('.seconds-input');
-
 var descriptionWarning = document.querySelector('.description-warning');
 var activeButton = document.querySelector(".button.active");
 var formDisplay = document.querySelector('.new-activity-container');
 var showTimer =document.querySelector('.timer-view');
-var activityEncompassContainer = document.querySelector('.activity-encompass-container')
-var startTimerButton = document.querySelector('.timer-start-button')
+var activityEncompassContainer = document.querySelector('.activity-encompass-container');
+var startTimerButton = document.querySelector('.timer-start-button');
+var timerDescriptionDisplay = document.querySelector('.timer-description-display');
 
 // var hasError = true;
 var currentActivity;
 var savedActivity = [];
 var selectedActivity = '';
+var countdown;
+var timerDisplay = document.querySelector('.countdown');
 
 studyButton.addEventListener('click', selectActivity);
 meditateButton.addEventListener('click', selectActivity);
@@ -40,7 +38,6 @@ startActivityButton.addEventListener('click', mamaFunction);
 startTimerButton.addEventListener('click', startTimer);
 
 function validateCategory() {
-  // event.preventDefault();
   if (selectedActivity === '') {
     return false;
   } else {
@@ -51,12 +48,11 @@ function validateCategory() {
 function mamaFunction(event) {
   event.preventDefault();
   if (validateCategory(event) && validateDescription(event) && validateNum(event) && validateNumSec(event)) {
-    // true; dont need. above is true to itself
-    // hasError = false;
   makeActivity(event);
   var totalSeconds = currentActivity.minutes * 60 + currentActivity.seconds;
   displayTimeLeft(totalSeconds);
   toggleTimer();
+  displayDescription();
   }
 }
 
@@ -66,7 +62,6 @@ function selectActivity(event) {
   if (activeButton) {
     activeButton.classList.remove("active")
     selectedActivity = '';
-    // validateCategory(event)
   }
   event.target.classList.add("active")
   selectedActivity = event.target.innerText;
@@ -114,9 +109,6 @@ function validateNumSec(event) {
   }
 }
 
-var countdown;
-  var timerDisplay = document.querySelector('.countdown');
-
  function displayTimeLeft(totalSeconds) {
    var minutes = Math.floor (totalSeconds / 60);
    var remainderSeconds = totalSeconds % 60;
@@ -133,7 +125,9 @@ var countdown;
    currentActivity.timer()
  }
 
-
+function displayDescription() {
+  timerDescriptionDisplay.innerText = descriptionInput.value;
+}
 
 
 // Form Functionality
