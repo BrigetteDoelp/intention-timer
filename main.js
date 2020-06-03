@@ -126,11 +126,8 @@ function logActivity() {
   currentActivity.markComplete();
   savedActivities.push(currentActivity);
   displayLoggedActivity(currentActivity);
-<<<<<<< HEAD
   displayCreateNewButton();
-=======
   currentActivity.saveToStorage();
->>>>>>> 3a607552f76a3cf7e02dc3ab2211cee55938377f
 }
 
 function displayLoggedActivity(activity) {
@@ -149,7 +146,6 @@ function displayLoggedActivity(activity) {
   activityCardContainer.insertAdjacentHTML("beforeend", activityTemplate);
 }
 
-<<<<<<< HEAD
 createNewActivityButton = document.querySelector('.create-new-activity-button')
 createNewActivityButton.addEventListener('click', displayCreateNewButton)
 // var createNewActivityView = document.querySelector('.create-new-activity-view')
@@ -164,6 +160,8 @@ function displayCreateNewButton() {
 createNewActivityButton.addEventListener('click', displayMain);
 
 function displayMain () {
+  createNewActivityButton.classList.add('hidden');
+
   var activityEncompassContainer = document.querySelector('.activity-encompass-container')
   activityEncompassContainer.classList.remove('hidden');
   minutesInput.value = '';
@@ -175,8 +173,6 @@ function displayMain () {
   }
 }
 
-
-=======
 function loadHandler() {
   var activityCardContainer = document.querySelector(".past-activity-container");
   if (savedActivities.length > 0) {
@@ -188,9 +184,3 @@ function loadHandler() {
     activityCardContainer.insertAdjacentHTML("beforeend", pastText);
   }
 }
-
->>>>>>> 3a607552f76a3cf7e02dc3ab2211cee55938377f
-// When the timer completes, the alert no longer appears.
-// Instead, a motivational or congratulatory message appears
-// When the user clicks Log Activity, a card with the category, time, and the users input for What would you like to accomplish during this time? should appear on the card. The card should also have a small color-coded visual indicator of the category. Color, size, and spacing of that visual indicator are provided in comp.
-// Before moving on, your past activity cards should match the comp.
