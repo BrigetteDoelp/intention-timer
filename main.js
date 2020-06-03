@@ -10,9 +10,9 @@ var startTimerButton = document.querySelector('.timer-start-button');
 var timerDisplay = document.querySelector('.countdown');
 var logActivityButton = document.querySelector('.log-activity-button')
 
-
+var savedActivities = JSON.parse(localStorage.getItem("savedActivities")) || [];
 var currentActivity;
-var savedActivities = [];
+// var savedActivities = [];
 var selectedActivity = '';
 var countdown;
 
@@ -124,6 +124,7 @@ function logActivity() {
   currentActivity.markComplete();
   savedActivities.push(currentActivity);
   displayLoggedActivity(currentActivity);
+  currentActivity.saveToStorage();
 }
 
 function displayLoggedActivity(activity) {
