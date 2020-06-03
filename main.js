@@ -158,7 +158,19 @@ function displayCreateNewButton() {
 
 }
 
+createNewActivityButton.addEventListener('click', displayMain);
 
+function displayMain () {
+  var activityEncompassContainer = document.querySelector('.activity-encompass-container')
+  activityEncompassContainer.classList.remove('hidden');
+  minutesInput.value = '';
+  secondsInput.value = '';
+  descriptionInput.value = '';
+  var activeButton = document.querySelector(".button.active");
+  if (activeButton) {
+    activeButton.classList.remove("active")
+  }
+}
 
 
 // When the timer completes, the alert no longer appears.
