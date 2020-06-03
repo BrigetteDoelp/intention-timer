@@ -8,9 +8,11 @@ var secondsInput = document.querySelector('.seconds-input');
 var warningMessage = document.querySelector('.warning-message-number');
 var startTimerButton = document.querySelector('.timer-start-button');
 var timerDisplay = document.querySelector('.countdown');
+var logActivityButton = document.querySelector('.log-activity-button')
+
 
 var currentActivity;
-var savedActivity = [];
+var savedActivities = [];
 var selectedActivity = '';
 var countdown;
 
@@ -19,6 +21,8 @@ meditateButton.addEventListener('click', selectActivity);
 exerciseButton.addEventListener('click', selectActivity);
 startActivityButton.addEventListener('click', mamaFunction);
 startTimerButton.addEventListener('click', startTimer);
+logActivityButton.addEventListener('click', logActivity);
+
 
 function mamaFunction(event) {
   event.preventDefault();
@@ -111,6 +115,37 @@ function displayDescription() {
 
 function showAlert(display) {
   if (timerDisplay.innerText == '00:00') {
-    setTimeout(function() { alert("complete"); }, 1);
+    logActivityButton.classList.remove('hidden');
+    startTimerButton.innerText = "COMPLETE!";
   }
 }
+
+function logActivity() {
+  currentActivity.markComplete();
+  savedActivities.push(currentActivity);
+  displayLoggedActivity(currentActivity);
+}
+
+function displayLoggedActivity(activity) {
+  var activityCardContainer = document.querySelector(".past-activity-container");
+  var activityTemplate = `
+    <div class="activity-card" >
+      <div class="card-text">
+        <h4 class="card-category">${activity.category}</h4>
+        <p class="card-time">${activity.minutes} MINUTES ${activity.seconds} SECONDS</p>
+        <p class="card-description">${activity.description}</p>
+      </div>
+      <div class="card-color" data-category=${activity.category}>
+      </div>
+    </div>
+  `;
+  if (savedActivities.length === 1) {
+    activityCardContainer.innerHTML = "";
+  }
+  activityCardContainer.insertAdjacentHTML("beforeend", activityTemplate);
+}
+
+// When the timer completes, the alert no longer appears.
+// Instead, a motivational or congratulatory message appears
+// When the user clicks Log Activity, a card with the category, time, and the users input for What would you like to accomplish during this time? should appear on the card. The card should also have a small color-coded visual indicator of the category. Color, size, and spacing of that visual indicator are provided in comp.
+// Before moving on, your past activity cards should match the comp.

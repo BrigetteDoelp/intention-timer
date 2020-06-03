@@ -1,3 +1,7 @@
+* {
+  font-family: Montserrat;
+}
+
 body {
   background: #2b2733;
   margin: 0;
@@ -16,7 +20,6 @@ main {
 }
 
 .main-title, p, label {
-  font-family: Montserrat;
   font-weight: 400;
   color: #fff;
 }
@@ -32,7 +35,6 @@ label {
 }
 
 .new-activity-title, .past-activities-title {
-  font-family: Montserrat;
   font-weight: 300;
   color: #cbc9cf;
   padding-top: 5%;
@@ -147,10 +149,10 @@ label {
   padding-left: 5%;
 }
 
-.past-activity-container {
+.past-activity-view {
   border-left: 2px solid #46424d;
   width: 30%;
-  padding-left: 5%;
+  padding: 0 5%;
 }
 
  .past-text {
@@ -232,13 +234,8 @@ input::-webkit-inner-spin-button {
   text-align: center;
 }
 
-.hidden {
-  display: none;
-}
-
 .timer-description-display {
   margin-top: 1.5em;
-  font-family: Montserrat;
   font-weight: 400;
   font-size: 2em;
   color: #CBC9CF;
@@ -255,4 +252,56 @@ input::-webkit-inner-spin-button {
   width: 20em;
   border-radius: 50%;
   outline: none;
+}
+
+.log-activity-button {
+  display: block;
+  margin: auto;
+  color: #46424d;
+  height: 3.5em;
+  width: 15em;
+  border: 2px solid #fff;
+  background: white;
+}
+
+.activity-card {
+  background: #46424d;
+  display: flex;
+  padding: 15px;
+  margin: 1em 0;
+}
+
+.card-color {
+  width: .25em;
+  height: 3em;
+  background-color: red;
+}
+
+.card-color[data-category="Study"] {
+  background-color: #b3fd78;
+}
+
+.card-color[data-category="Meditate"] {
+  background-color: #C278FD;
+}
+
+.card-color[data-category="Exercise"] {
+  background-color: #FD8078;
+}
+
+
+.card-text {
+  width: 95%;
+}
+
+.card-category {
+  color: #fff;
+}
+
+.card-time, .card-description {
+  color: #cbc9cf
+}
+
+.hidden {
+  display: none;
 }

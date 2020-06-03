@@ -27,7 +27,7 @@ class Activity {
 
 
   markComplete() {
-
+    this.completed = true;
   }
 
   saveToStorage() {
