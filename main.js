@@ -30,7 +30,7 @@ function mamaFunction(event) {
     makeActivity();
     var totalSeconds = currentActivity.minutes * 60 + currentActivity.seconds;
     displayTimeLeft(totalSeconds);
-    toggleTimer();
+    showTimer();
     displayDescription();
   }
 }
@@ -97,11 +97,12 @@ function displayTimeLeft(totalSeconds) {
   showAlert(display);
 }
 
-function toggleTimer() {
+function showTimer() {
   var activityEncompassContainer = document.querySelector('.activity-encompass-container');
+  // var formView = document.querySelector('.form-view');
   var showTimer = document.querySelector('.timer-view');
-  activityEncompassContainer.classList.toggle('hidden');
-  showTimer.classList.toggle('hidden');
+  activityEncompassContainer.classList.add('hidden');
+  showTimer.classList.remove('hidden');
 }
 
 function startTimer() {
@@ -124,6 +125,7 @@ function logActivity() {
   currentActivity.markComplete();
   savedActivities.push(currentActivity);
   displayLoggedActivity(currentActivity);
+  displayCreateNewButton();
 }
 
 function displayLoggedActivity(activity) {
@@ -144,6 +146,20 @@ function displayLoggedActivity(activity) {
   }
   activityCardContainer.insertAdjacentHTML("beforeend", activityTemplate);
 }
+
+createNewActivityButton = document.querySelector('.create-new-activity-button')
+createNewActivityButton.addEventListener('click', displayCreateNewButton)
+// var createNewActivityView = document.querySelector('.create-new-activity-view')
+
+function displayCreateNewButton() {
+  var showTimer = document.querySelector('.timer-view');
+  showTimer.classList.add('hidden')
+  createNewActivityButton.classList.remove('hidden');
+
+}
+
+
+
 
 // When the timer completes, the alert no longer appears.
 // Instead, a motivational or congratulatory message appears
