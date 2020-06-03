@@ -10,11 +10,12 @@ var startTimerButton = document.querySelector('.timer-start-button');
 var timerDisplay = document.querySelector('.countdown');
 var logActivityButton = document.querySelector('.log-activity-button')
 
-
+var savedActivities = JSON.parse(localStorage.getItem("savedActivities")) || [];
 var currentActivity;
-var savedActivities = [];
 var selectedActivity = '';
 var countdown;
+
+window.onload = loadHandler();
 
 studyButton.addEventListener('click', selectActivity);
 meditateButton.addEventListener('click', selectActivity);
@@ -124,6 +125,7 @@ function logActivity() {
   currentActivity.markComplete();
   savedActivities.push(currentActivity);
   displayLoggedActivity(currentActivity);
+  currentActivity.saveToStorage();
 }
 
 function displayLoggedActivity(activity) {
@@ -139,10 +141,19 @@ function displayLoggedActivity(activity) {
       </div>
     </div>
   `;
-  if (savedActivities.length === 1) {
-    activityCardContainer.innerHTML = "";
-  }
   activityCardContainer.insertAdjacentHTML("beforeend", activityTemplate);
+}
+
+function loadHandler() {
+  var activityCardContainer = document.querySelector(".past-activity-container");
+  if (savedActivities.length > 0) {
+    for (var i = 0; i < savedActivities.length; i++) {
+      displayLoggedActivity(savedActivities[i])
+    }
+  } else {
+    var pastText =`<p class="past-text">You haven't logged any activities yet.<br/>Complete the form to the left to get started!</p>`;
+    activityCardContainer.insertAdjacentHTML("beforeend", pastText);
+  }
 }
 
 // When the timer completes, the alert no longer appears.
