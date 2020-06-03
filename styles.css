@@ -126,12 +126,12 @@ label {
   background-image: url("./assets/study-active.svg");
 }
 
-.study-img {
+.study-img, .meditate-img, .exercise-img {
   height: 25px;
   width: 25px;
 }
 
-.meditate-img {
+/* .meditate-img {
   height: 25px;
   width: 25px;
 }
@@ -139,7 +139,7 @@ label {
 .exercise-img {
   height: 25px;
   width: 25px;
-}
+} */
 
 .new-activity-container {
   display: flex;
@@ -163,8 +163,8 @@ label {
 form {
   display: flex;
   flex-direction: column;
-  width: 70%;
-  height: 70%;
+  /* width: 70%;
+  height: 70%; */
   background: #46424d;
   border: 2px solid #46424d;
   border-radius: .35em;
@@ -289,7 +289,6 @@ input::-webkit-inner-spin-button {
   background-color: #FD8078;
 }
 
-
 .card-text {
   width: 95%;
 }
@@ -302,6 +301,62 @@ input::-webkit-inner-spin-button {
   color: #cbc9cf
 }
 
+.create-new-activity-button {
+  display: flex;
+  margin: 5em auto;
+  display: block;
+  margin-left: auto;
+  color: #46424d;
+  padding: .5em 1.5em;
+  background-color: #cbc9cf;
+
+  /* color: #cbc9cf
+  height: 5em;
+  width: 20em: */
+
+  /* border: 1px solid red; */
+}
+
 .hidden {
   display: none;
 }
+
+@media (max-width: 650px) {
+
+  /* .body {
+    /* display: flex;
+    flex-wrap: wrap; */
+    /* flex-direction: column; */
+    /* flex-direction: column; */
+
+
+  main {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%
+  }
+
+  .new-activity-container {
+    color: red;
+    display: flex;
+    align-self: flex-start;
+    /* flex-wrap: wrap; */
+
+    font-size: 1em;
+  }
+
+  /* .header {
+    display: flex
+    flex-direction: row;
+  } */
+  .past-activity-view {
+    /* display: flex;
+    align-self: flex-end; */
+    /* flex-wrap: wrap; */
+    /* flex-direction: column; */
+    /* flex: 1 0 0; */
+  }
+
+}
+/* label */

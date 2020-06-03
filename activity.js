@@ -31,7 +31,12 @@ class Activity {
   }
 
   saveToStorage() {
-
+    // saved saved activities to local storage
+    JSON.stringify(savedActivities)
+    localStorage.setItem()
   }
+
+  //onload functions
+  // loops thru saved active runs display log
 
 }
