@@ -10,11 +10,12 @@ var startTimerButton = document.querySelector('.timer-start-button');
 var timerDisplay = document.querySelector('.countdown');
 var logActivityButton = document.querySelector('.log-activity-button')
 
-
+var savedActivities = JSON.parse(localStorage.getItem("savedActivities")) || [];
 var currentActivity;
-var savedActivities = [];
 var selectedActivity = '';
 var countdown;
+
+window.onload = loadHandler();
 
 studyButton.addEventListener('click', selectActivity);
 meditateButton.addEventListener('click', selectActivity);
@@ -125,7 +126,11 @@ function logActivity() {
   currentActivity.markComplete();
   savedActivities.push(currentActivity);
   displayLoggedActivity(currentActivity);
+<<<<<<< HEAD
   displayCreateNewButton();
+=======
+  currentActivity.saveToStorage();
+>>>>>>> 3a607552f76a3cf7e02dc3ab2211cee55938377f
 }
 
 function displayLoggedActivity(activity) {
@@ -141,12 +146,10 @@ function displayLoggedActivity(activity) {
       </div>
     </div>
   `;
-  if (savedActivities.length === 1) {
-    activityCardContainer.innerHTML = "";
-  }
   activityCardContainer.insertAdjacentHTML("beforeend", activityTemplate);
 }
 
+<<<<<<< HEAD
 createNewActivityButton = document.querySelector('.create-new-activity-button')
 createNewActivityButton.addEventListener('click', displayCreateNewButton)
 // var createNewActivityView = document.querySelector('.create-new-activity-view')
@@ -173,6 +176,20 @@ function displayMain () {
 }
 
 
+=======
+function loadHandler() {
+  var activityCardContainer = document.querySelector(".past-activity-container");
+  if (savedActivities.length > 0) {
+    for (var i = 0; i < savedActivities.length; i++) {
+      displayLoggedActivity(savedActivities[i])
+    }
+  } else {
+    var pastText =`<p class="past-text">You haven't logged any activities yet.<br/>Complete the form to the left to get started!</p>`;
+    activityCardContainer.insertAdjacentHTML("beforeend", pastText);
+  }
+}
+
+>>>>>>> 3a607552f76a3cf7e02dc3ab2211cee55938377f
 // When the timer completes, the alert no longer appears.
 // Instead, a motivational or congratulatory message appears
 // When the user clicks Log Activity, a card with the category, time, and the users input for What would you like to accomplish during this time? should appear on the card. The card should also have a small color-coded visual indicator of the category. Color, size, and spacing of that visual indicator are provided in comp.

@@ -31,9 +31,9 @@ class Activity {
   }
 
   saveToStorage() {
-    // saved saved activities to local storage
-    JSON.stringify(savedActivities)
-    localStorage.setItem()
+// save savedActivities to local storage
+  var stringifiedSavedActivities = JSON.stringify(savedActivities);
+  localStorage.setItem("savedActivities", stringifiedSavedActivities);
   }
 
   //onload functions
