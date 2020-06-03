@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="stylesheet" href="./styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='https://fonts.googleapis.com/css?family=Montserrat:300,400' rel='stylesheet'>
-    <link rel="stylesheet" href="./styles.css">
     <title>Intention Timer</title>
   </head>
   <body>
@@ -11,6 +11,7 @@
       <h2 class="main-title">INTENTION TIMER</h2>
     </header>
     <main>
+      <!-- <section class="container"> -->
       <section class="new-activity-container">
       <div class="activity-encompass-container">
         <h2 class="new-activity-title">New Activity</h2>
@@ -40,13 +41,16 @@
           </section>
           <button class="start-activity-button">START ACTIVITY</button>
         </form>
+
         </div>
-        <section class="timer-view hidden">
-          <h1 class="timer-description-display"></h1>
-          <section class="countdown"></section>
-          <button class="timer-start-button">START</ button>
-          <button class="log-activity-button hidden">LOG ACTIVITY BUTTON</ button>
-        </section>
+        <button class="create-new-activity-button hidden">CREATE NEW ACTIVITY CLASS</button>
+
+      <section class="timer-view hidden">
+        <h1 class="timer-description-display"></h1>
+        <section class="countdown"></section>
+        <button class="timer-start-button">START</ button>
+        <button class="log-activity-button hidden">LOG ACTIVITY BUTTON</ button>
+      </section>
       </section>
       <section class="past-activity-view">
         <h2 class="past-activities-title">Past Activities</h2>
@@ -54,6 +58,7 @@
           <p class="past-text">You haven't logged any activities yet.<p>
           <p class="past-text">Complete the form to the left to get started!</p>
         </div>
+      </section>
       </section>
     </main>
     <script src="activity.js"></script>
