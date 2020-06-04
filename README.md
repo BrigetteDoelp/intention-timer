@@ -15,7 +15,7 @@ This was a group project that was designed to utilize and store intentions. A us
 * Attempt to have very clean JavaScript and CSS code and refactor whenever possible with a goal of readability.
 * Become familiar with the use of GitHub and branching when working on a group project.
 
-###Planning:###
+## Planning: ##
 
 The paired project was created using Atom as a text editor and Trello as a project management tool. We referenced MDN and lesson plans for informations and our mentors for support. Our [remote repository](https://github.com/BrigetteDoelp/intention-timer) is stored on GitHub.
 
@@ -67,17 +67,15 @@ https://media.giphy.com/media/QWGPxRyqQGvtH6ZPGK/giphy.mp4
 
 
 
-#Programming Languages Used#
+# Programming Languages Used #
 
 HTML
 CSS
 JavaScript
 
-#Other Important Features Implemented#
+# Refactoring Code: #
 
-Class instantiation
 
-#Refactoring Code:#
 
 
 **Built With:**
@@ -95,7 +93,7 @@ https://frontend.turing.io/projects/module-1/intention-timer-group.html
 * [Brigette Doelp](https://github.com/BrigetteDoelp)
 
 
-#Additional Links:#
+# Additional Links: #
 
 * [DTR](https://gist.github.com/BrigetteDoelp/6d6a9f6defd7ae4a11f0dadfd37c689b)
 * [Trello](https://trello.com/b/x2TCfmoZ/intention-timer)
