@@ -74,7 +74,7 @@ Instead, a motivational or congratulatory message appears on the left side of th
 
 **Mobile responsive**
 
-![image of media query](readmePictures/mediaQ1.png)
+![image of media query](readmePictures/MediaQ1.png)
 
 ![image of media query 2](readmePictures/mediaQ2.png)
 
