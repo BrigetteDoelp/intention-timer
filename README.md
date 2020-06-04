@@ -2,11 +2,11 @@
 
 # Intention Group Project
 
-**Project Description**
+##Project Description
 
 This was a group project that was designed to utilize and store intentions. A user can input a category, description, and time that counts down and logs and save their intention to the page. form that logs  while using mobile queries and input information that can be stored and retrieved from local storage.  You can create a list of these cards to reference. The card should also persist..
 
-**Learning Goals**
+##Learning Goals
 
 * Create a functioning website with the use of HTML, CSS and JavaScript.
 * Use variables, event listeners, event handlers, classes and functions to allow navigation through the webpage.
@@ -16,27 +16,32 @@ This was a group project that was designed to utilize and store intentions. A us
 * Attempt to have very clean JavaScript and CSS code and refactor whenever possible with a goal of readability.
 * Become familiar with the use of GitHub and branching when working on a group project.
 
-## Planning:
+##Planning:
 
 The paired project was created using Atom as a text editor and Trello as a project management tool. We referenced MDN and lesson plans for informations and our mentors for support. Our [remote repository](https://github.com/BrigetteDoelp/intention-timer) is stored on GitHub.
 
 This was a 7-day paired project.
 
-**Challenges**
+** Challenges
 
 * Mastering the GitHub workflow with many branches and multiple group members.
 * Although our code was functional, we knew that we needed to refactor to make the code more readable.
 * Creating a smooth transition between desktop and mobile views with input areas while using media queries.
 
-**Wins**
+** Wins
 
 * Working with CSS and JS in a collaborative environment while working under deadlines.
 * Learning and managing local storage.
 * Teamwork that lead to professional development growth.
 * All functionality is working through Iteration 4.
 
-**In Action/Functionality**
+## In Action/Functionality
 
+** Full app rundown
+
+https://gph.is/g/ZkRjBx1
+
+** Main page functionality:
 * When an activity category is clicked on (Exercise, Meditate, or Study), the associated border and icon should change colors to give a visual indication that it has been selected. An input field should be provided for What would you like to accomplish during this time?
 
 
@@ -45,6 +50,9 @@ This was a 7-day paired project.
 
 * If the Start Activity button is clicked before the user has entered information into all four inputs, the user will receive an error message, but will not lose any information that was provided.
 
+https://gph.is/g/amzY7d5
+
+** Timer Functionality
 
 * The user can start the time by clicking Start.
 While timer is running, the user should see it count down by second.
@@ -52,10 +60,14 @@ While timer is running, the user should see it count down by second.
 * When the timer completes, the alert no longer appears.
 Instead, a motivational or congratulatory message appears on the left side of the page, replacing the timer.
 
+https://gph.is/g/4LWo3ML
 
 * When the user acknowledges the message and completion of the activity by clicking Log Activity, a card with the category, time, and the users input for What would you like to accomplish during this time? should appear on the card. The card should also have a small color-coded visual indicator of the category.
 
-*
+https://gph.is/g/ZWrkoBd
+
+** Mobile responsive
+
 
 
 **Programming Languages Used**
