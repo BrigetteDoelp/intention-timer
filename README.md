@@ -34,13 +34,15 @@ This was a 7-day paired project.
 * Teamwork that lead to professional development growth.
 * All functionality is working through Iteration 4.
 
-##In Action/Functionality##
+## In Action/Functionality ##
+
 
 https://giphy.com/gifs/ftve8VMiBi8RL5cH0m/html5
 
 **Main page functionality:**
 * When an activity category is clicked on (Exercise, Meditate, or Study), the associated border and icon should change colors to give a visual indication that it has been selected. An input field should be provided for What would you like to accomplish during this time?
 
+![image of description error](/readmePictures/description.png)
 
 *  A Start Activity button is provided to submit the data entered into the form. The user should no longer see the form, and instead see a timer clock. The timer clock should display the user-provided minutes and seconds, as well as the description.
 
