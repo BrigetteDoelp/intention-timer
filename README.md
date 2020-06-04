@@ -39,7 +39,7 @@ This was a 7-day paired project.
 
 ** Full app rundown
 
-https://gph.is/g/ZkRjBx1
+https://giphy.com/gifs/ftve8VMiBi8RL5cH0m/html5
 
 ** Main page functionality:
 * When an activity category is clicked on (Exercise, Meditate, or Study), the associated border and icon should change colors to give a visual indication that it has been selected. An input field should be provided for What would you like to accomplish during this time?
@@ -50,7 +50,7 @@ https://gph.is/g/ZkRjBx1
 
 * If the Start Activity button is clicked before the user has entered information into all four inputs, the user will receive an error message, but will not lose any information that was provided.
 
-https://gph.is/g/amzY7d5
+https://giphy.com/gifs/Vaqm7jalYdFSBLHqFE/html5
 
 ** Timer Functionality
 
@@ -60,11 +60,11 @@ While timer is running, the user should see it count down by second.
 * When the timer completes, the alert no longer appears.
 Instead, a motivational or congratulatory message appears on the left side of the page, replacing the timer.
 
-https://gph.is/g/4LWo3ML
+https://giphy.com/gifs/cM7t9IUpqGY9WadTgI/html5
 
 * When the user acknowledges the message and completion of the activity by clicking Log Activity, a card with the category, time, and the users input for What would you like to accomplish during this time? should appear on the card. The card should also have a small color-coded visual indicator of the category.
 
-https://gph.is/g/ZWrkoBd
+https://giphy.com/gifs/QWGPxRyqQGvtH6ZPGK/html5
 
 ** Mobile responsive
 
