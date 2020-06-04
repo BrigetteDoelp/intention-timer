@@ -64,7 +64,7 @@ https://giphy.com/gifs/cM7t9IUpqGY9WadTgI/html5
 
 * When the user acknowledges the message and completion of the activity by clicking Log Activity, a card with the category, time, and the users input for What would you like to accomplish during this time? should appear on the card. The card should also have a small color-coded visual indicator of the category.
 
-https://giphy.com/gifs/QWGPxRyqQGvtH6ZPGK/html5
+https://media.giphy.com/media/QWGPxRyqQGvtH6ZPGK/giphy.mp4
 
 ** Mobile responsive
 
