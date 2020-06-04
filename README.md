@@ -1,11 +1,11 @@
 
 # Intention Timer Group Project
 
-##Project Description##
+### Project Description ###
 
 This was a group project that was designed to utilize and store intentions. A user can input a category, description, and time that counts down and logs and save their intention to the page. form that logs  while using mobile queries and input information that can be stored and retrieved from local storage.  You can create a list of these cards to reference. The card should also persist..
 
-##Learning Goals##
+## Learning Goals ##
 
 * Create a functioning website with the use of HTML, CSS and JavaScript.
 * Use variables, event listeners, event handlers, classes and functions to allow navigation through the webpage.
@@ -15,7 +15,7 @@ This was a group project that was designed to utilize and store intentions. A us
 * Attempt to have very clean JavaScript and CSS code and refactor whenever possible with a goal of readability.
 * Become familiar with the use of GitHub and branching when working on a group project.
 
-##Planning:##
+###Planning:###
 
 The paired project was created using Atom as a text editor and Trello as a project management tool. We referenced MDN and lesson plans for informations and our mentors for support. Our [remote repository](https://github.com/BrigetteDoelp/intention-timer) is stored on GitHub.
 
@@ -36,11 +36,9 @@ This was a 7-day paired project.
 
 ##In Action/Functionality##
 
-**Full app rundown**
-
 https://giphy.com/gifs/ftve8VMiBi8RL5cH0m/html5
 
-*Main page functionality:*
+**Main page functionality:**
 * When an activity category is clicked on (Exercise, Meditate, or Study), the associated border and icon should change colors to give a visual indication that it has been selected. An input field should be provided for What would you like to accomplish during this time?
 
 
@@ -51,7 +49,7 @@ https://giphy.com/gifs/ftve8VMiBi8RL5cH0m/html5
 
 https://media.giphy.com/media/Vaqm7jalYdFSBLHqFE/200w_d.gif
 
-*Timer Functionality*
+**Timer Functionality**
 
 * The user can start the time by clicking Start.
 While timer is running, the user should see it count down by second.
@@ -65,7 +63,7 @@ https://giphy.com/gifs/cM7t9IUpqGY9WadTgI/html5
 
 https://media.giphy.com/media/QWGPxRyqQGvtH6ZPGK/giphy.mp4
 
-*Mobile responsive*
+**Mobile responsive**
 
 
 
