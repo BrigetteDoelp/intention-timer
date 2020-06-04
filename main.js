@@ -8,7 +8,8 @@ var secondsInput = document.querySelector('.seconds-input');
 var warningMessage = document.querySelector('.warning-message-number');
 var startTimerButton = document.querySelector('.timer-start-button');
 var timerDisplay = document.querySelector('.countdown');
-var logActivityButton = document.querySelector('.log-activity-button')
+var logActivityButton = document.querySelector('.log-activity-button');
+var createNewActivityButton = document.querySelector('.create-new-activity-button');
 
 var savedActivities = JSON.parse(localStorage.getItem("savedActivities")) || [];
 var currentActivity;
@@ -23,7 +24,7 @@ exerciseButton.addEventListener('click', selectActivity);
 startActivityButton.addEventListener('click', mamaFunction);
 startTimerButton.addEventListener('click', startTimer);
 logActivityButton.addEventListener('click', logActivity);
-
+createNewActivityButton.addEventListener('click', displayMain);
 
 function mamaFunction(event) {
   event.preventDefault();
@@ -100,7 +101,6 @@ function displayTimeLeft(totalSeconds) {
 
 function showTimer() {
   var activityEncompassContainer = document.querySelector('.activity-encompass-container');
-  // var formView = document.querySelector('.form-view');
   var showTimer = document.querySelector('.timer-view');
   activityEncompassContainer.classList.add('hidden');
   showTimer.classList.remove('hidden');
@@ -151,10 +151,6 @@ function displayLoggedActivity(activity) {
   activityCardContainer.insertAdjacentHTML("beforeend", activityTemplate);
 }
 
-createNewActivityButton = document.querySelector('.create-new-activity-button')
-createNewActivityButton.addEventListener('click', displayCreateNewButton)
-// var createNewActivityView = document.querySelector('.create-new-activity-view')
-
 function displayCreateNewButton() {
   var showTimer = document.querySelector('.timer-view');
   showTimer.classList.add('hidden')
@@ -162,22 +158,20 @@ function displayCreateNewButton() {
 
 }
 
-createNewActivityButton.addEventListener('click', displayMain);
-
-function displayMain () {
+function displayMain() {
   createNewActivityButton.classList.add('hidden');
   startTimerButton.innerText = "START!";
   var activityEncompassContainer = document.querySelector('.activity-encompass-container')
   activityEncompassContainer.classList.remove('hidden');
+  resetForm();
+}
+
+function resetForm() {
   var form = document.querySelector('.activity-form')
   form.reset()
-  // minutesInput.value = '';
-  // secondsInput.value = '';
-  descriptionInput.value = '';
   var activeButton = document.querySelector(".button.active");
   if (activeButton) {
     activeButton.classList.remove("active")
-
   }
 }
 
