@@ -100,7 +100,6 @@ function displayTimeLeft(totalSeconds) {
 
 function showTimer() {
   var activityEncompassContainer = document.querySelector('.activity-encompass-container');
-  // var formView = document.querySelector('.form-view');
   var showTimer = document.querySelector('.timer-view');
   activityEncompassContainer.classList.add('hidden');
   showTimer.classList.remove('hidden');
@@ -147,7 +146,7 @@ function displayLoggedActivity(activity) {
 }
 
 createNewActivityButton = document.querySelector('.create-new-activity-button')
-createNewActivityButton.addEventListener('click', displayCreateNewButton)
+// createNewActivityButton.addEventListener('click', displayCreateNewButton)
 // var createNewActivityView = document.querySelector('.create-new-activity-view')
 
 function displayCreateNewButton() {
@@ -159,7 +158,7 @@ function displayCreateNewButton() {
 
 createNewActivityButton.addEventListener('click', displayMain);
 
-function displayMain () {
+function displayMain() {
   createNewActivityButton.classList.add('hidden');
 
   var activityEncompassContainer = document.querySelector('.activity-encompass-container')
