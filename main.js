@@ -100,6 +100,7 @@ function displayTimeLeft(totalSeconds) {
 
 function showTimer() {
   var activityEncompassContainer = document.querySelector('.activity-encompass-container');
+  // var formView = document.querySelector('.form-view');
   var showTimer = document.querySelector('.timer-view');
   activityEncompassContainer.classList.add('hidden');
   showTimer.classList.remove('hidden');
@@ -115,6 +116,7 @@ function displayDescription() {
 }
 
 function showAlert(display) {
+  console.log(timerDisplay.innerText == '00:00')
   if (timerDisplay.innerText == '00:00') {
     logActivityButton.classList.remove('hidden');
     startTimerButton.innerText = "COMPLETE!";
@@ -127,6 +129,10 @@ function logActivity() {
   displayLoggedActivity(currentActivity);
   displayCreateNewButton();
   currentActivity.saveToStorage();
+  var pastText = document.querySelector('.past-text');
+  if (pastText) {
+    pastText.classList.add('hidden');
+  }
 }
 
 function displayLoggedActivity(activity) {
@@ -146,7 +152,7 @@ function displayLoggedActivity(activity) {
 }
 
 createNewActivityButton = document.querySelector('.create-new-activity-button')
-// createNewActivityButton.addEventListener('click', displayCreateNewButton)
+createNewActivityButton.addEventListener('click', displayCreateNewButton)
 // var createNewActivityView = document.querySelector('.create-new-activity-view')
 
 function displayCreateNewButton() {
@@ -158,17 +164,20 @@ function displayCreateNewButton() {
 
 createNewActivityButton.addEventListener('click', displayMain);
 
-function displayMain() {
+function displayMain () {
   createNewActivityButton.classList.add('hidden');
-
+  startTimerButton.innerText = "START!";
   var activityEncompassContainer = document.querySelector('.activity-encompass-container')
   activityEncompassContainer.classList.remove('hidden');
-  minutesInput.value = '';
-  secondsInput.value = '';
+  var form = document.querySelector('.activity-form')
+  form.reset()
+  // minutesInput.value = '';
+  // secondsInput.value = '';
   descriptionInput.value = '';
   var activeButton = document.querySelector(".button.active");
   if (activeButton) {
     activeButton.classList.remove("active")
+
   }
 }
 
