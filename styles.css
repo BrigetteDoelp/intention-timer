@@ -186,7 +186,7 @@ form > section {
 
 .minutes-input {
   color: #cbc9cf;
-  width: 110%;
+  width: 100%;
   margin-right: 1.4em;
   border: none;
   border-bottom: 2px solid #cbc9cf;
@@ -196,7 +196,7 @@ form > section {
 
 .seconds-input {
   color: #cbc9cf;
-  width: 100%;
+  width: 90%;
   margin-right: 3em;
   border: none;
   border-bottom: 2px solid #cbc9cf;
@@ -323,17 +323,9 @@ input::-webkit-inner-spin-button {
 
 @media (max-width: 650px) {
 
-  /* .body {
-    /* display: flex;
-    flex-wrap: wrap; */
-    /* flex-direction: column; */
-    /* flex-direction: column; */
-
-
   main {
     display: flex;
     flex-direction: column;
-
     width: 100%
   }
 
@@ -341,22 +333,37 @@ input::-webkit-inner-spin-button {
     color: red;
     display: flex;
     align-self: flex-start;
-    /* flex-wrap: wrap; */
-
     font-size: 1em;
   }
 
-  /* .header {
-    display: flex
-    flex-direction: row;
-  } */
+/* .activity-form { */
+  form {
+    width: 95%;
+    padding-left: 1.5em;
+  }
+
   .past-activity-view {
-    /* display: flex;
-    align-self: flex-end; */
-    /* flex-wrap: wrap; */
-    /* flex-direction: column; */
-    /* flex: 1 0 0; */
+    border-top: 1px solid #CBC9CF;
+    margin-top: 10em;
+    width: 90%;
+    padding-left: 1.5em;
   }
 
 }
-/* label */
+
+@media (max-width: 475px) {
+
+  .new-activity-container {
+    color: red;
+    display: flex;
+    align-self: flex-start;
+    font-size: 1em;
+  }
+
+  .past-activity-view {
+    margin-top: 18em;
+    width: 90%;
+    padding-left: 1.5em;
+  }
+
+}
