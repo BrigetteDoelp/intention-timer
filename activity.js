@@ -24,19 +24,13 @@ class Activity {
     }, 1000)
   }
 
-
-
   markComplete() {
     this.completed = true;
   }
 
   saveToStorage() {
-// save savedActivities to local storage
-  var stringifiedSavedActivities = JSON.stringify(savedActivities);
-  localStorage.setItem("savedActivities", stringifiedSavedActivities);
+    var stringifiedSavedActivities = JSON.stringify(savedActivities);
+    localStorage.setItem("savedActivities", stringifiedSavedActivities);
   }
-
-  //onload functions
-  // loops thru saved active runs display log
 
 }
