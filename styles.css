@@ -131,16 +131,6 @@ label {
   width: 25px;
 }
 
-/* .meditate-img {
-  height: 25px;
-  width: 25px;
-}
-
-.exercise-img {
-  height: 25px;
-  width: 25px;
-} */
-
 .new-activity-container {
   display: flex;
   flex-direction: column;
@@ -163,8 +153,6 @@ label {
 form {
   display: flex;
   flex-direction: column;
-  /* width: 70%;
-  height: 70%; */
   background: #46424d;
   border: 2px solid #46424d;
   border-radius: .35em;
@@ -309,12 +297,6 @@ input::-webkit-inner-spin-button {
   color: #46424d;
   padding: .5em 1.5em;
   background-color: #cbc9cf;
-
-  /* color: #cbc9cf
-  height: 5em;
-  width: 20em: */
-
-  /* border: 1px solid red; */
 }
 
 .hidden {
