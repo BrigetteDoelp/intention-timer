@@ -48,35 +48,35 @@ This was a 7-day paired project.
 
 * If the Start Activity button is clicked before the user has entered information into all four inputs, the user will receive an error message, but will not lose any information that was provided.
 
-![image of description error](/readmePictures/description.png)
+![image of description error](readmePictures/description.png)
 
-![image of minutes error](/readmePictures/minutes.png)
+![image of minutes error](readmePictures/minutes.png)
 
-![image of seconds error](/readmePictures/secondsError.png)
+![image of seconds error](readmePictures/secondsError.png)
 
-https://media.giphy.com/media/Vaqm7jalYdFSBLHqFE/200w_d.gif
+![App in action](https://media.giphy.com/media/Vaqm7jalYdFSBLHqFE/200w_d.gif)
 
 **Timer Functionality**
 
 * The user can start the time by clicking Start.
 While timer is running, the user should see it count down by second.
 
-![image of timer start](/readmePictures/startTimer.png)
+![image of timer start](readmePictures/startTimer.png)
 
 * When the timer completes, the alert no longer appears.
 Instead, a motivational or congratulatory message appears on the left side of the page, replacing the timer.
 
-![image of timerEnd](/readmePictures/timerEnd.png)
+![image of timerEnd](readmePictures/timerEnd.png)
 
 * When the user acknowledges the message and completion of the activity by clicking Log Activity, a card with the category, time, and the users input for What would you like to accomplish during this time? should appear on the card. The card should also have a small color-coded visual indicator of the category.
 
-![image of past activities](/readmePictures/pastActivities.png)
+![image of past activities](readmePictures/pastActivities.png)
 
 **Mobile responsive**
 
-![image of media query](/readmePictures/mediaQ1.png)
+![image of media query](readmePictures/mediaQ1.png)
 
-![image of media query 2](/readmePictures/mediaQ2.png)
+![image of media query 2](readmePictures/mediaQ2.png)
 
 # Programming Languages Used #
 
